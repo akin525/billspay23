@@ -167,17 +167,14 @@ class VertualController  extends Notification
 //        ]);
 
         if ($json = json_decode(file_get_contents("php://input"), true)) {
-            print_r($json['ref']);
+            print_r($json['reference']);
             $data = $json;
-
         }
 //return $data;
-        $refid=$data["ref"];
+        $refid=$data["reference"];
         $amount=$data["amount"];
-        $no=$data["account_number"];
-        $from=$data["from_account_name"];
-        $from1=$data["from_account_number"];
-        $narration=$data['narration'];
+        $no=$data["receiving_account"];
+        $narration=$data['sender_narration']. " Funding";
 
         $wallet = wallet::where('account_number', $no)->first();
         $pt=$wallet['balance'];
@@ -219,18 +216,6 @@ class VertualController  extends Notification
                     'username'=>$deposit['username'],
                     'activities'=>$narration,
                 ]);
-                $title = $user->username." Account Funded";
-                $body = $user->username. ' Account Fund with ₦'.$amount.' from'.$from.' '.$from1;
-
-
-                $admin = 'info@efemobilemoney.com';
-
-                $receiver = $user->email;
-                $username=$user->username;
-                $deposit['charges']=$char->charges;
-
-                Mail::to($receiver)->send(new Emailfund($deposit));
-                Mail::to($admin)->send(new Emailfund($deposit));
 
 
 
@@ -242,104 +227,7 @@ class VertualController  extends Notification
 
         }
     }
-    public  function firebasenotification($username, $title, $body)
-    {
-        $curl = curl_init();
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://fcm.googleapis.com/fcm/send',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{
-    "to": "/topics/'.$username.'",
-    "notification": {
-        "body": "'.$body.'",
-        "title": "'.$title.'"
-
-    }
-}',
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer AAAA0VPmumc:APA91bFO0BZ1BL5bGsBIFW2JGE3SZzC60y-Hrqg2UgVlgeYfj7_kIawa7W1Vz0LMTVhhyC1uy4dsSGAU2oe87HzR27PInPhLlDlWKOS5buvaejdQl2O2lWe9Ewts09GiRcmJEi3LnkzB',
-                'Content-Type: application/json'
-            ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-//        dd($response);
-//        echo $response;
-    }
-    public  function firebasenotificationadmin($username, $title, $body)
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://fcm.googleapis.com/fcm/send',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{
-    "to": "/topics/Adeolu23",
-    "notification": {
-        "body": "'.$body.'",
-        "title": "'.$title.'"
-
-    }
-}',
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer AAAA0VPmumc:APA91bFO0BZ1BL5bGsBIFW2JGE3SZzC60y-Hrqg2UgVlgeYfj7_kIawa7W1Vz0LMTVhhyC1uy4dsSGAU2oe87HzR27PInPhLlDlWKOS5buvaejdQl2O2lWe9Ewts09GiRcmJEi3LnkzB',
-                'Content-Type: application/json'
-            ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-//        dd($response);
-//        echo $response;
-    }
-    public  function firebasenotificationadmin1($username, $title, $body)
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://fcm.googleapis.com/fcm/send',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{
-    "to": "/topics/Izormor2019",
-    "notification": {
-        "body": "'.$body.'",
-        "title": "'.$title.'"
-    }
-}',
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer AAAA0VPmumc:APA91bFO0BZ1BL5bGsBIFW2JGE3SZzC60y-Hrqg2UgVlgeYfj7_kIawa7W1Vz0LMTVhhyC1uy4dsSGAU2oe87HzR27PInPhLlDlWKOS5buvaejdQl2O2lWe9Ewts09GiRcmJEi3LnkzB',
-                'Content-Type: application/json'
-            ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-//        dd($response);
-//        echo $response;
-    }
 
     public function honor(Request $request)
     {
