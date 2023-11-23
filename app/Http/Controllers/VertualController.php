@@ -64,7 +64,7 @@ class VertualController
                 $wallet->refid = $refid;
                 $wallet->save();
                 $transaction = transaction::create([
-                    'username' => $this->user['username'],
+                    'username' => $user['username'],
                     'activities' => 'Virtual Account Generated Successfully',
                 ]);
 
