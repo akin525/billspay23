@@ -66,12 +66,15 @@ class virtualaccountjob implements ShouldQueue
         curl_close($curl);
         $data = json_decode($response, true);
         if ($data['success']==1){
-            $account = $data["data"]["data"]["customer_name"];
+            $account = $data["data"]["data"]["account_name"];
             $number = $data["data"]["data"]["account_number"];
-            $bank = $data["data"]["data"]["bank_name"];
+            $bank = $data["data"]["data"]["provider"];
+            $refid = $data["data"]["data"]["reference"];
+
             $wallet->account_number = $number;
             $wallet->account_name= $account;
             $wallet->bank=$bank;
+            $wallet->refid = $refid;
             $wallet->save();
 
         }elseif ($data['success']==0){
