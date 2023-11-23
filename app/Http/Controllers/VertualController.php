@@ -38,11 +38,11 @@ class VertualController
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('lastname' => $this->user['name'],
+                CURLOPT_POSTFIELDS => array('lastname' => $user['name'],
                     'firstname' => 'BILLSPAY',
-                    'email' => $this->user['email'], 'dob' => $this->user['dob'],
-                    'address' => $this->user['address'], 'gender' => $this->user['gender'],
-                    'phone' => $this->user['phone']),
+                    'email' => $user['email'], 'dob' => $user['dob'],
+                    'address' => $user['address'], 'gender' => $user['gender'],
+                    'phone' => $user['phone']),
                 CURLOPT_HTTPHEADER => array(
                     'apikey: sk-RwQM6hymqWCe43ct3esB'
                 ),
