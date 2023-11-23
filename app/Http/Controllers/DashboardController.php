@@ -9,6 +9,7 @@ use App\Models\bill;
 use App\Models\data;
 use App\Models\deposit;
 use App\Models\easy;
+use App\Models\samm;
 use App\Models\server;
 use App\Models\transaction;
 use App\Models\User;
@@ -109,16 +110,16 @@ class DashboardController
         $server=server::where('status', 1)->first();
         $typeo='mtn-sme';
             if($server) {
-                $netm=data::where('network', 'like', '%'.$request.'%')
+                $netm=samm::where('network', 'like', '%'.$request.'%')
                     ->where('status', '1')->get();
 //                $sme=data::where('network', 'like', '%mtn-sme%')->where('status', '1')->first();
 
 //                return $sme;
-                $neta=easy::where('network', 'like', '%'.$request.'%')
+                $neta=samm::where('network', 'like', '%'.$request.'%')
                     ->where('status', '1')->get();
-                $net9=easy::where('network', 'like', '%'.$request.'%')
+                $net9=samm::where('network', 'like', '%'.$request.'%')
                     ->where('status', '1')->get();
-                $netg=easy::where('network','like', '%'.$request.'%')
+                $netg=samm::where('network','like', '%'.$request.'%')
                     ->where('status', '1')->get();
 
 //                return $net9;
@@ -140,8 +141,8 @@ class DashboardController
         if ($server->name =='mcd') {
             $options = data::where('network', $selectedValue)->get();
             return response()->json($options);
-        }elseif($server->name == 'easyaccess'){
-            $options = easy::where('network', $selectedValue)->get();
+        }elseif($server->name == 'sammighty'){
+            $options = samm::where('network', $selectedValue)->get();
             return response()->json($options);
         }
 

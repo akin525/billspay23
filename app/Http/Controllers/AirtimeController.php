@@ -80,10 +80,10 @@ class AirtimeController
                         'activities'=>'Being Purchase Of Airtime to '.$request->number,
                     ]);
 
-                    $comiS=Comission::create([
-                        'username'=>Auth::user()->username,
-                        'amount'=>$comission,
-                    ]);
+//                    $comiS=Comission::create([
+//                        'username'=>Auth::user()->username,
+//                        'amount'=>$comission,
+//                    ]);
                     $bo['name']=$user->name;
                     $bo['email']=Auth::user()->email;
 
@@ -92,11 +92,14 @@ class AirtimeController
 
            if ($mcd->server == "sammighty"){
                 $response = $daterserver->sammighty($request);
-
+//               return response()->json([
+//                   'status' => 'success',
+//                   'message' => $response,
+//               ]);
                 $data = json_decode($response, true);
 
                $success = $data["success"];
-                if ($success == 1) {
+                if ($success == "1") {
 
                     $update=bill::where('id', $bo->id)->update([
                         'server_response'=>$response,
@@ -105,9 +108,9 @@ class AirtimeController
                     $am = "NGN $request->amount  Airtime Purchase Was Successful To";
                     $ph = $request->number;
 
-                    $com=$wallet->bonus+$comission;
-                    $wallet->bonus=$com;
-                    $wallet->save();
+//                    $com=$wallet->bonus+$comission;
+//                    $wallet->bonus=$com;
+//                    $wallet->save();
 
                     $parise=$comission."₦ Commission Is added to your wallet balance";
                     $receiver = $user->email;

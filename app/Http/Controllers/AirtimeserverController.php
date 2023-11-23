@@ -71,7 +71,7 @@ class AirtimeserverController extends Controller
             CURLOPT_SSL_VERIFYHOST => 0,
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('refid' => $request->refid, 'name' => $request->id, 'phone' => $request->number, 'amount' => $request->amount, 'reseller_price' => $request->amount),
+            CURLOPT_POSTFIELDS => array('refid' => $request->refid, 'name' => $request->id, 'number' => $request->number, 'amount' => $request->amount, 'reseller_price' => $request->amount),
 
             CURLOPT_HTTPHEADER => array(
                 'apikey: sk-RwQM6hymqWCe43ct3esB'

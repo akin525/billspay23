@@ -12,6 +12,7 @@ use App\Models\deposit;
 use App\Models\easy;
 use App\Models\profit;
 use App\Models\profit1;
+use App\Models\samm;
 use App\Models\server;
 use App\Models\setting;
 use App\Models\transaction;
@@ -37,8 +38,8 @@ class BillController extends Controller
 
         $serve = server::where('status', '1')->first();
 
-        if ($serve->name == 'honorworld') {
-            $product = big::where('id', $request->productid)->first();
+        if ($serve->name == 'sammighty') {
+            $product = samm::where('id', $request->productid)->first();
         } elseif ($serve->name == 'mcd') {
             $product = data::where('id', $request->productid)->first();
         }elseif ($serve->name == 'easyaccess') {
@@ -373,8 +374,8 @@ class BillController extends Controller
             $user = User::find($request->user()->id);
             $wallet = wallet::where('username', $user->username)->first();
             $serve = server::where('status', '1')->first();
-            if ($serve->name == 'honorworld') {
-                $product = big::where('id', $request->productid)->first();
+            if ($serve->name == 'sammighty') {
+                $product = samm::where('id', $request->productid)->first();
             } elseif ($serve->name == 'mcd') {
                 $product = data::where('id', $request->productid)->first();
             }elseif ($serve->name == 'easyaccess') {
@@ -440,6 +441,7 @@ class BillController extends Controller
 
                 $object = json_decode($product);
                 $object->number = $request->number;
+                $object->refid = $request->refid;
                 $json = json_encode($object);
 
                 $daterserver = new DataserverController();
@@ -492,12 +494,15 @@ class BillController extends Controller
 
                     }
                 }
-                else if ($mcd->name == "mcd") {
-                    $response = $daterserver->mcdbill($object);
-
+                else if ($mcd->name == "sammighty") {
+                    $response = $daterserver->sammighty($object);
+//               return response()->json([
+//                   'status' => 'success',
+//                   'message' => $response,
+//               ]);
                     $data = json_decode($response, true);
 
-                    if (isset($data['success'])) {
+                    if ($data['success']=="1") {
 //                        $dis=$data['discountAmount'];
 //                    echo $success;
                         $success = "1";
@@ -518,19 +523,13 @@ class BillController extends Controller
                         $am = "$product->name  was successful delivered to";
                         $ph = $request->number;
 
-                        $receiver = $user->email;
-                        $admin = 'info@efemobilemoney.com';
-
-
-                        Mail::to($receiver)->send(new Emailtrans($bo));
-                        Mail::to($admin)->send(new Emailtrans($bo));
                         return response()->json([
                             'status' => 'success',
                             'message' => $am.' ' .$ph,
 //                            'data' => $responseData // If you want to include additional data
                         ]);
 
-                    }elseif (!isset($data['success'])) {
+                    }else {
                         $success = 0;
 //                        $zo = $wallet->balance + $request->amount;
 //                        $wallet->balance = $zo;
@@ -538,10 +537,11 @@ class BillController extends Controller
                         $update=bill::where('id', $bo->id)->update([
                             'server_response'=>$response,
                         ]);
+                        $msg="Request Pending";
                         return response()->json([
                             'status' => 'fail',
-                            'message' => $response,
-//                            'message' => $am.' ' .$ph,
+//                            'message' => $response,
+                            'message' => $msg,
 //                            'data' => $responseData // If you want to include additional data
                         ]);
 
