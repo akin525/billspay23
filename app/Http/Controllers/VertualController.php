@@ -9,6 +9,7 @@ use App\Models\charp;
 use App\Models\data;
 use App\Models\deposit;
 use App\Models\setting;
+use App\Models\transaction;
 use App\Models\wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -24,15 +25,10 @@ class VertualController
             $user = User::find($request->user()->id);
             $wallet = wallet::where('username', $user->username)->first();
 
-            $username=encription::decryptdata($user->username).rand(111, 999);
-            $email=encription::decryptdata($user->email);
-            $name=encription::decryptdata($user->name);
-            $phone=encription::decryptdata($user->phone);
-
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://integration.mcd.5starcompany.com.ng/api/reseller/virtual-account3',
+                CURLOPT_URL => 'https://pay.sammighty.com.ng/api/createaccount',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -42,49 +38,43 @@ class VertualController
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('account_name' => $name,
-                    'business_short_name' => 'RENO','uniqueid' => $username,
-                    'email' => $email,'dob' => $user->dob,
-                    'address' => $user->address,'gender' => $user->gender,
-                    'phone' =>$phone,'webhook_url' => 'https://renomobilemoney.com/api/run1'),
+                CURLOPT_POSTFIELDS => array('lastname' => $this->user['name'],
+                    'firstname' => 'BILLSPAY',
+                    'email' => $this->user['email'], 'dob' => $this->user['dob'],
+                    'address' => $this->user['address'], 'gender' => $this->user['gender'],
+                    'phone' => $this->user['phone']),
                 CURLOPT_HTTPHEADER => array(
-                    'Authorization: mcd_key_aq9vGp2N8679cX3uAU7zIc3jQfd'
+                    'apikey: sk-RwQM6hymqWCe43ct3esB'
                 ),
             ));
 
             $response = curl_exec($curl);
 
             curl_close($curl);
-//            return $response;
-//return $response;
-//var_dump(array('account_name' => $name,'business_short_name' => 'RENO','uniqueid' => $username,'email' => $email,'phone' => '08146328645', 'webhook_url'=>'https://renomobilemoney.com/go/run.php'));
             $data = json_decode($response, true);
-            if ($data['success']==1) {
-                $account = $data["data"]["customer_name"];
-                $number = $data["data"]["account_number"];
-                $bank = $data["data"]["bank_name"];
-
-                $wallet->account_number1 = $number;
-                $wallet->account_name1 = $account;
-                $wallet->bank=$bank;
+            if ($data['success'] == 1) {
+                $account = $data["data"]["data"]["customer_name"];
+                $number = $data["data"]["data"]["account_number"];
+                $bank = $data["data"]["data"]["bank_name"];
+                $wallet->account_number = $number;
+                $wallet->account_name = $account;
+                $wallet->bank = $bank;
                 $wallet->save();
+                $transaction = transaction::create([
+                    'username' => $this->user['username'],
+                    'activities' => 'Virtual Account Generated Successfully',
+                ]);
 
-
-//            $data = [
-//                'title' => 'Test push title',
-//                'website_id' => 1,
-//                'body' => 'Test push message',
-//                'ttl' => 300, //push notification lifetime
-//                'stretch_time' => 0, //how long to spread message delivery
-//                'link' => 'https://github.com/garethtdavies'
-//            ];
-//            SendPulse::createPushTask($data);
-                return redirect("dashboard")->withSuccess('You are not allowed to access');
-            }elseif ($data['success']==0){
+                $msg="Account Generated Succesfully";
+                Alert::success('success', $msg);
+                return redirect('myaccount');
+            } elseif ($data['success'] == 0) {
 
                 Alert::error('Error', $response);
                 return redirect('myaccount');
             }
+
+
 
 
         }
