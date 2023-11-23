@@ -24,6 +24,7 @@ class wallet extends Authenticatable
         'account_number',
         'account_name',
         'bank',
+        'refid',
         'bvn',
         'bonus',
         'status',

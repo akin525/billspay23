@@ -52,14 +52,16 @@ class VertualController
 
             curl_close($curl);
             $data = json_decode($response, true);
-            return $response;
-            if ($data['success'] == 1) {
-                $account = $data["data"]["data"]["customer_name"];
+//            return $response;
+            if ($data['success'] == "1") {
+                $account = $data["data"]["data"]["account_name"];
                 $number = $data["data"]["data"]["account_number"];
                 $bank = $data["data"]["data"]["bank_name"];
+                $refid = $data["data"]["data"]["reference"];
                 $wallet->account_number = $number;
                 $wallet->account_name = $account;
                 $wallet->bank = $bank;
+                $wallet->refid = $refid;
                 $wallet->save();
                 $transaction = transaction::create([
                     'username' => $this->user['username'],
