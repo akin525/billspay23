@@ -25,6 +25,7 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ResellerController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TransController;
+use App\Http\Controllers\VertualController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -129,6 +130,7 @@ Route::middleware([
     Route::view('vtu', 'reseller.vtu');
 
 
+    Route::get('virtual', [VertualController::class, 'vertual'])->name('virtual');
 });
 
 Route::get('/logout', function(){
