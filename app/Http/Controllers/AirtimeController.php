@@ -117,7 +117,7 @@ class AirtimeController
                     $receiver = $user->email;
                     return response()->json([
                         'status' => 'success',
-                        'message' => $am.' ' .$ph.' & '.$parise,
+                        'message' => $am.' ' .$ph,
 //                            'data' => $responseData // If you want to include additional data
                     ]);
                 } elseif ($success == 0) {
@@ -130,9 +130,7 @@ class AirtimeController
 
                     return response()->json([
                         'status' => 'fail',
-                        'message' => $response,
-//                            'message' => $am.' ' .$ph,
-//                            'data' => $responseData // If you want to include additional data
+                        'message' => 'Transaction Pending',
                     ]);
                 }
             }elseif ($mcd->server == "easyaccess"){

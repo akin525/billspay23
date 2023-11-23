@@ -71,7 +71,7 @@ class AlltvController
     public function verifytv($value1, $value2)
     {
 
-        $resellerURL='https://integration.mcd.5starcompany.com.ng/api/reseller/';
+        $resellerURL='https://pay.sammighty.com.ng/api/';
 
 
         $curl = curl_init();
@@ -79,7 +79,7 @@ class AlltvController
 
         curl_setopt_array($curl, array(
 
-            CURLOPT_URL => $resellerURL.'validate',
+            CURLOPT_URL => $resellerURL.'verifytv',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -87,9 +87,9 @@ class AlltvController
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('service' => 'tv', 'coded' =>$value2, 'phone' => $value1),
+            CURLOPT_POSTFIELDS => array('productid' =>$value2, 'number' => $value1),
             CURLOPT_HTTPHEADER => array(
-                'Authorization: MCDKEY_903sfjfi0ad833mk8537dhc03kbs120r0h9a'
+                'apikey: sk-0rrbGRye0qHViQJFVrrA'
             )
         ));
 
@@ -98,10 +98,11 @@ class AlltvController
         curl_close($curl);
 //        echo $response;
 //return $response;
+
         $data = json_decode($response, true);
         $success= $data["success"];
         if($success== 1){
-            $name=$data["data"];
+            $name=$data["message"];
 
             $log=$name;
         }else{

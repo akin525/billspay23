@@ -74,7 +74,7 @@ class AirtimeserverController extends Controller
             CURLOPT_POSTFIELDS => array('refid' => $request->refid, 'name' => $request->id, 'number' => $request->number, 'amount' => $request->amount, 'reseller_price' => $request->amount),
 
             CURLOPT_HTTPHEADER => array(
-                'apikey: sk-RwQM6hymqWCe43ct3esB'
+                'apikey: sk-0rrbGRye0qHViQJFVrrA'
             )));
 
         $response = curl_exec($curl);

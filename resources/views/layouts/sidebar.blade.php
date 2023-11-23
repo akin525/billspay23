@@ -282,7 +282,7 @@
                     <ul aria-expanded="false">
                         <li><a href="{{route('airtime')}}">Buy Airtime</a></li>
                         <li><a href="{{url('pick')}}">Buy Data</a></li>
-                        <li><a href="{{route('datapin')}}">Buy Data-pin</a></li>
+{{--                        <li><a href="{{route('datapin')}}">Buy Data-pin</a></li>--}}
                         <li><a href="{{url('tv')}}">Tv Subscription</a></li>
                         <li><a href="{{route('electricity')}}">Electricity</a></li>
                     </ul>

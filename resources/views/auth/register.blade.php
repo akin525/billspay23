@@ -184,12 +184,12 @@
 
 <!-- loader END -->
 <div class="wrapper">
-    <br>
-    <br>
-    <br>
     <section class="login-content overflow-hidden">
         <div class="row no-gutters align-items-center bg-white">
             <div class="col-md-12 col-lg-6 align-self-center">
+                <br>
+                <br>
+                <br>
                 <div class="row justify-content-center">
                     <div class="col-md-12 col-lg-6 align-self-center">
                         <a href="/register" class="navbar-brand d-flex align-items-center mb-3 justify-content-center text-primary">
