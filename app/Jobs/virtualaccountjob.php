@@ -41,7 +41,7 @@ class virtualaccountjob implements ShouldQueue
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://integration.mcd.5starcompany.com.ng/api/reseller/virtual-account3',
+            CURLOPT_URL => 'https://pay.sammighty.com.ng/api/createaccount',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -51,13 +51,13 @@ class virtualaccountjob implements ShouldQueue
             CURLOPT_SSL_VERIFYHOST => 0,
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('account_name' => $this->user['name'],
-                'business_short_name' => 'EFE','uniqueid' => $username,
+            CURLOPT_POSTFIELDS => array('lastname' => $this->user['name'],
+                'firstname' => 'BILLSPAY',
                 'email' => $this->user['email'],'dob' => $this->user['dob'],
                 'address' => $this->user['address'],'gender' => $this->user['gender'],
-                'phone' =>$this->user['phone'],'webhook_url' => 'https://app.efemobilemoney.com/api/run1'),
+                'phone' =>$this->user['phone']),
             CURLOPT_HTTPHEADER => array(
-                'Authorization: mcd_key_aq9vGp2N8679cX3uAU7zIc3jQfd'
+                'apikey: sk-RwQM6hymqWCe43ct3esB'
             ),
         ));
 
@@ -66,9 +66,9 @@ class virtualaccountjob implements ShouldQueue
         curl_close($curl);
         $data = json_decode($response, true);
         if ($data['success']==1){
-            $account = $data["data"]["customer_name"];
-            $number = $data["data"]["account_number"];
-            $bank = $data["data"]["bank_name"];
+            $account = $data["data"]["data"]["customer_name"];
+            $number = $data["data"]["data"]["account_number"];
+            $bank = $data["data"]["data"]["bank_name"];
             $wallet->account_number = $number;
             $wallet->account_name= $account;
             $wallet->bank=$bank;
@@ -82,11 +82,7 @@ class virtualaccountjob implements ShouldQueue
             'username'=>$this->user['username'],
             'activities'=>'Virtual Account Generated Successfully',
         ]);
-        $input=$this->user;
-        $receiver=$this->user['email'];
-        $admin= 'info@efemobilemoney.com';
-        Mail::to($receiver)->send(new Emailotp($input));
-        Mail::to($admin)->send(new Emailotp($input));
+
 
     }
 }
