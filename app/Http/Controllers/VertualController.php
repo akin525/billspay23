@@ -70,11 +70,11 @@ class VertualController
 
                 $msg="Account Generated Succesfully";
                 Alert::success('success', $msg);
-                return redirect('myaccount');
+                return back();
             } elseif ($data['success'] == 0) {
 
                 Alert::error('Error', $response);
-                return redirect('myaccount');
+                return back();
             }
 
 
