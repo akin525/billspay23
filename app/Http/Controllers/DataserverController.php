@@ -138,7 +138,7 @@ class DataserverController extends Controller
                 'refid' => $request->refid, //update this on your script to receive webhook notifications
             ),
             CURLOPT_HTTPHEADER => array(
-                "apikey: sk-0rrbGRye0qHViQJFVrrA", //replace this with your authorization_token
+                "apikey: sk-RwQM6hymqWCe43ct3esB", //replace this with your authorization_token
                 "cache-control: no-cache"
             ),
         ));
