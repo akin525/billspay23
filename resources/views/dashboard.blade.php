@@ -135,24 +135,26 @@
                                         </div>
                                     </a>
                                 </div>
-                                {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
-                                {{--                                    <div class="card ov-card">--}}
-                                {{--                                        <div class="card-body">--}}
-                                {{--                                            <div class="ana-box">--}}
-                                {{--                                                <div class="ic-n-bx">--}}
-                                {{--                                                    <div class="icon-box bg-primary ">--}}
-                                {{--                                                        <i class="fa fa-gifts text-white"></i>--}}
-                                {{--                                                    </div>--}}
-                                {{--                                                </div>--}}
-                                {{--                                                <div class="anta-data">--}}
-                                {{--                                                    <h5>Spin</h5>--}}
-                                {{--                                                    <span>& Win</span>--}}
-                                {{--                                                    <h3>+25%</h3>--}}
-                                {{--                                                </div>--}}
-                                {{--                                            </div>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
+                                                                <div class="col-xl-2 col-sm-4 col-6">
+                                                                    <a href="{{url('electricity')}}">
+                                                                    <div class="card ov-card">
+                                                                        <div class="card-body">
+                                                                            <div class="ana-box">
+                                                                                <div class="ic-n-bx">
+                                                                                    <div class="icon-box bg-primary ">
+                                                                                        <i class="fa fa-gifts text-white"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="anta-data">
+                                                                                    <h5>Pay</h5>
+                                                                                    <span>Electricity</span>
+{{--                                                                                    <h3>+25%</h3>--}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    </a>
+                                                                </div>
                                 {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
                                 {{--                                    <a href="{{url('tasks')}}">--}}
                                 {{--                                    <div class="card ov-card">--}}
