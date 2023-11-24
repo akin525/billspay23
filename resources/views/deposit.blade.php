@@ -22,12 +22,12 @@
                         <tbody>
                         @foreach($fund as $po)
                             <tr>
-                                <td>{{$po->date}}</td>
+                                <td>{{$po->crested_at}}</td>
                                 <td>{{$po->username}}</td>
                                 <td>{{$po->amount}}</td>
                                 <td>{{$po->iwallet}}</td>
                                 <td>{{$po->fwallet}}</td>
-                                <td>{{$po->payment_ref}}</td>
+                                <td>{{$po->refid}}</td>
                             </tr>
                         @endforeach
                         </tbody>
