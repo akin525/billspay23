@@ -173,63 +173,63 @@ class VertualController  extends Notification
             print_r($json);
             $data = $json;
 
-
+            return $json;
         }
-        $refid=$data["reference"];
-        $amount=$data["amount"];
-        $no=$data["receiving_account"];
-        $narration=$data['sender_narration']. " Funding";
-
-        $wallet = wallet::where('account_number', $no)->first();
-        $pt=$wallet['balance'];
-
-        if ($no == $wallet->account_number) {
-            $user = user::where('username', $wallet->username)->first();
-            $depo = deposit::where('refid', $refid)->first();
-            if (isset($depo)) {
-                echo "payment refid the same";
-                return $depo;
-            } else {
-
-                $char = settings::first();
-                $amount1 = $amount - $char->charges;
-
-
-                $gt = $amount1 + $pt;
-                $reference = $refid;
-
-                $deposit = deposit::create([
-                    'username' => $wallet->username,
-                    'refid' =>  $reference,
-                    'amount' => $amount,
-                    'narration'=>$narration,
-                    'iwallet' => $pt,
-                    'fwallet' => $gt,
-                ]);
-                $charp = charges::create([
-                    'username' => $wallet->username,
-                    'refid' => $reference,
-                    'amount' => $char->charges,
-                    'iwallet' => $pt,
-                    'fwallet' => $gt,
-                ]);
-                $wallet->balance = $gt;
-                $wallet->save();
-
-                $transaction=transaction::create([
-                    'username'=>$deposit['username'],
-                    'activities'=>$narration,
-                ]);
-
-
-
-
-            }
-
-
-
-
-        }
+//        $refid=$data["reference"];
+//        $amount=$data["amount"];
+//        $no=$data["receiving_account"];
+//        $narration=$data['sender_narration']. " Funding";
+//
+//        $wallet = wallet::where('account_number', $no)->first();
+//        $pt=$wallet['balance'];
+//
+//        if ($no == $wallet->account_number) {
+//            $user = user::where('username', $wallet->username)->first();
+//            $depo = deposit::where('refid', $refid)->first();
+//            if (isset($depo)) {
+//                echo "payment refid the same";
+//                return $depo;
+//            } else {
+//
+//                $char = settings::first();
+//                $amount1 = $amount - $char->charges;
+//
+//
+//                $gt = $amount1 + $pt;
+//                $reference = $refid;
+//
+//                $deposit = deposit::create([
+//                    'username' => $wallet->username,
+//                    'refid' =>  $reference,
+//                    'amount' => $amount,
+//                    'narration'=>$narration,
+//                    'iwallet' => $pt,
+//                    'fwallet' => $gt,
+//                ]);
+//                $charp = charges::create([
+//                    'username' => $wallet->username,
+//                    'refid' => $reference,
+//                    'amount' => $char->charges,
+//                    'iwallet' => $pt,
+//                    'fwallet' => $gt,
+//                ]);
+//                $wallet->balance = $gt;
+//                $wallet->save();
+//
+//                $transaction=transaction::create([
+//                    'username'=>$deposit['username'],
+//                    'activities'=>$narration,
+//                ]);
+//
+//
+//
+//
+//            }
+//
+//
+//
+//
+//        }
     }
 
 
