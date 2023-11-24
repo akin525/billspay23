@@ -4,6 +4,200 @@
     <script src="{{ asset('js/Chart.min.js') }}"></script>
 
     <div class="row">
+        <div class="col-xl-12">
+            <div class="card bg-primary-light analytics-card">
+                <div class="card-body mt-4 pb-1">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2">
+                            <h3 class="mb-3">Quick Transaction</h3>
+                            <p class="mb-0 text-primary pb-4">Get more bonus<br> on our platform</p>
+                        </div>
+                        <div class="col-xl-10">
+                            <div class="row">
+                                <div class="col-xl-2 col-sm-4 col-6">
+                                    <a href="{{url('pick')}}">
+                                        <div class="card ov-card">
+                                            <div class="card-body">
+                                                <div class="ana-box">
+                                                    <div class="ic-n-bx">
+                                                        <div class="icon-box bg-primary">
+                                                            <i class="fa fa-solid fa-network-wired text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="anta-data">
+                                                        <h5>Buy</h5>
+                                                        <span>Data</span>
+                                                        <h3>+23%</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-2 col-sm-4 col-6" data-bs-toggle="modal" data-bs-target="#airtimeModalCenter">
+                                    <div class="card ov-card">
+                                        <div class="card-body">
+                                            <div class="ana-box">
+                                                <div class="ic-n-bx">
+                                                    <div class="icon-box bg-primary">
+                                                        <i class="fa  fa-mobile-phone text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="anta-data">
+                                                    <h5>Buy</h5>
+                                                    <span>Airtime</span>
+                                                    <h3>-2%</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="airtimeModalCenter">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="loading-overlay" id="loadingSpinner" style="display: none;">
+                                            <div class="loading-spinner"></div>
+                                        </div>
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Airtime Recharge</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                </button>
+                                            </div>
+                                            <form id="dataForm" >
+                                                @csrf
+                                                <div class="card card-body">
+                                                    <p>AIRTIME PURCHASE</p>
+                                                    {{--                       <input placeholder="Your e-mail" class="subscribe-input" name="email" type="email">--}}
+                                                    <br/>
+                                                    <div id="div_id_network" class="form-group">
+                                                        <label for="network" class=" requiredField">
+                                                            Network<span class="asteriskField">*</span>
+                                                        </label>
+                                                        <div class="">
+                                                            <select name="id" class="text-success form-control" required="">
+
+                                                                <option value="m">MTN</option>
+                                                                <option value="g">GLO</option>
+                                                                <option value="a">AIRTEL</option>
+                                                                <option value="9">9MOBILE</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <div id="div_id_network" >
+                                                        <label for="network" class=" requiredField">
+                                                            Enter Amount<span class="asteriskField">*</span>
+                                                        </label>
+                                                        <div class="">
+                                                            <input type="number" id="amount" name="amount" min="100" max="4000" class="text-success form-control" required>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <div id="div_id_network" class="form-group">
+                                                        <label for="network" class=" requiredField">
+                                                            Enter Phone Number<span class="asteriskField">*</span>
+                                                        </label>
+                                                        <div class="">
+                                                            <input type="number" id="number" name="number" minlength="11" class="text-success form-control" required >
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
+                                                    <button type="submit" class="btn btn-primary">PURCHASE</button>
+                                                </div>
+                                            </form>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                {{--                        <button type="button" class="btn btn-primary">Save changes</button>--}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-2 col-sm-4 col-6">
+                                    <a href="{{url('tv')}}">
+                                        <div class="card ov-card">
+                                            <div class="card-body">
+                                                <div class="ana-box">
+                                                    <div class="ic-n-bx">
+                                                        <div class="icon-box bg-primary ">
+                                                            <i class="fa fa-cart-shopping text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="anta-data">
+                                                        <h5>Pay</h5>
+                                                        <span>& Tv</span>
+                                                        <h3>-3%</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
+                                {{--                                    <div class="card ov-card">--}}
+                                {{--                                        <div class="card-body">--}}
+                                {{--                                            <div class="ana-box">--}}
+                                {{--                                                <div class="ic-n-bx">--}}
+                                {{--                                                    <div class="icon-box bg-primary ">--}}
+                                {{--                                                        <i class="fa fa-gifts text-white"></i>--}}
+                                {{--                                                    </div>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <div class="anta-data">--}}
+                                {{--                                                    <h5>Spin</h5>--}}
+                                {{--                                                    <span>& Win</span>--}}
+                                {{--                                                    <h3>+25%</h3>--}}
+                                {{--                                                </div>--}}
+                                {{--                                            </div>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
+                                {{--                                    <a href="{{url('tasks')}}">--}}
+                                {{--                                    <div class="card ov-card">--}}
+                                {{--                                        <div class="card-body">--}}
+                                {{--                                            <div class="ana-box">--}}
+                                {{--                                                <div class="ic-n-bx">--}}
+                                {{--                                                    <div class="icon-box bg-primary rounded-circle">--}}
+                                {{--                                                        <i class="fa fa-tasks text-white"></i>--}}
+                                {{--                                                    </div>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <div class="anta-data">--}}
+                                {{--                                                    <h5>Task</h5>--}}
+                                {{--                                                    <span>& Earn</span>--}}
+                                {{--                                                    <h3>+30%</h3>--}}
+                                {{--                                                </div>--}}
+                                {{--                                            </div>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div>--}}
+                                {{--                                    </a>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
+                                {{--                                    <div class="card ov-card">--}}
+                                {{--                                        <div class="card-body">--}}
+                                {{--                                            <div class="ana-box">--}}
+                                {{--                                                <div class="ic-n-bx">--}}
+                                {{--                                                    <div class="icon-box bg-primary rounded-circle">--}}
+                                {{--                                                        <i class="fa fa-bookmark text-white"></i>--}}
+                                {{--                                                    </div>--}}
+                                {{--                                                </div>--}}
+                                {{--                                                <div class="anta-data">--}}
+                                {{--                                                    <h5>My</h5>--}}
+                                {{--                                                    <span>Plan</span>--}}
+                                {{--                                                    <h3>-32%</h3>--}}
+                                {{--                                                </div>--}}
+                                {{--                                            </div>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="col-xl-6">
             <div class="card overflow-hidden">
                 <div class="card-body">
@@ -159,199 +353,6 @@
             </div>
         </div>
 
-        <div class="col-xl-12">
-            <div class="card bg-primary-light analytics-card">
-                <div class="card-body mt-4 pb-1">
-                    <div class="row align-items-center">
-                        <div class="col-xl-2">
-                            <h3 class="mb-3">Quick Transaction</h3>
-                            <p class="mb-0 text-primary pb-4">Get more bonus<br> on our platform</p>
-                        </div>
-                        <div class="col-xl-10">
-                            <div class="row">
-                                <div class="col-xl-2 col-sm-4 col-6">
-                                    <a href="{{url('pick')}}">
-                                        <div class="card ov-card">
-                                        <div class="card-body">
-                                            <div class="ana-box">
-                                                <div class="ic-n-bx">
-                                                    <div class="icon-box bg-primary">
-                                                        <i class="fa fa-solid fa-network-wired text-white"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="anta-data">
-                                                    <h5>Buy</h5>
-                                                    <span>Data</span>
-                                                    <h3>+23%</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-                                <div class="col-xl-2 col-sm-4 col-6" data-bs-toggle="modal" data-bs-target="#airtimeModalCenter">
-                                    <div class="card ov-card">
-                                        <div class="card-body">
-                                            <div class="ana-box">
-                                                <div class="ic-n-bx">
-                                                    <div class="icon-box bg-primary">
-                                                        <i class="fa  fa-mobile-phone text-white"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="anta-data">
-                                                    <h5>Buy</h5>
-                                                    <span>Airtime</span>
-                                                    <h3>-2%</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="airtimeModalCenter">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="loading-overlay" id="loadingSpinner" style="display: none;">
-                                            <div class="loading-spinner"></div>
-                                        </div>
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Airtime Recharge</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                                </button>
-                                            </div>
-                                            <form id="dataForm" >
-                                                @csrf
-                                            <div class="card card-body">
-                                                <p>AIRTIME PURCHASE</p>
-                                                {{--                       <input placeholder="Your e-mail" class="subscribe-input" name="email" type="email">--}}
-                                                <br/>
-                                                <div id="div_id_network" class="form-group">
-                                                    <label for="network" class=" requiredField">
-                                                        Network<span class="asteriskField">*</span>
-                                                    </label>
-                                                    <div class="">
-                                                        <select name="id" class="text-success form-control" required="">
-
-                                                            <option value="m">MTN</option>
-                                                            <option value="g">GLO</option>
-                                                            <option value="a">AIRTEL</option>
-                                                            <option value="9">9MOBILE</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <div id="div_id_network" >
-                                                    <label for="network" class=" requiredField">
-                                                        Enter Amount<span class="asteriskField">*</span>
-                                                    </label>
-                                                    <div class="">
-                                                        <input type="number" id="amount" name="amount" min="100" max="4000" class="text-success form-control" required>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <div id="div_id_network" class="form-group">
-                                                    <label for="network" class=" requiredField">
-                                                        Enter Phone Number<span class="asteriskField">*</span>
-                                                    </label>
-                                                    <div class="">
-                                                        <input type="number" id="number" name="number" minlength="11" class="text-success form-control" required >
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
-                                                <button type="submit" class="btn btn-primary">PURCHASE</button>
-                                            </div>
-                                            </form>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                                {{--                        <button type="button" class="btn btn-primary">Save changes</button>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-2 col-sm-4 col-6">
-                                    <a href="{{url('tv')}}">
-                                    <div class="card ov-card">
-                                        <div class="card-body">
-                                            <div class="ana-box">
-                                                <div class="ic-n-bx">
-                                                    <div class="icon-box bg-primary ">
-                                                        <i class="fa fa-cart-shopping text-white"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="anta-data">
-                                                    <h5>Pay</h5>
-                                                    <span>& Tv</span>
-                                                    <h3>-3%</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-{{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
-{{--                                    <div class="card ov-card">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="ana-box">--}}
-{{--                                                <div class="ic-n-bx">--}}
-{{--                                                    <div class="icon-box bg-primary ">--}}
-{{--                                                        <i class="fa fa-gifts text-white"></i>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="anta-data">--}}
-{{--                                                    <h5>Spin</h5>--}}
-{{--                                                    <span>& Win</span>--}}
-{{--                                                    <h3>+25%</h3>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
-{{--                                    <a href="{{url('tasks')}}">--}}
-{{--                                    <div class="card ov-card">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="ana-box">--}}
-{{--                                                <div class="ic-n-bx">--}}
-{{--                                                    <div class="icon-box bg-primary rounded-circle">--}}
-{{--                                                        <i class="fa fa-tasks text-white"></i>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="anta-data">--}}
-{{--                                                    <h5>Task</h5>--}}
-{{--                                                    <span>& Earn</span>--}}
-{{--                                                    <h3>+30%</h3>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
-{{--                                    <div class="card ov-card">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="ana-box">--}}
-{{--                                                <div class="ic-n-bx">--}}
-{{--                                                    <div class="icon-box bg-primary rounded-circle">--}}
-{{--                                                        <i class="fa fa-bookmark text-white"></i>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="anta-data">--}}
-{{--                                                    <h5>My</h5>--}}
-{{--                                                    <span>Plan</span>--}}
-{{--                                                    <h3>-32%</h3>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
 @section('script')
