@@ -173,9 +173,10 @@ class VertualController  extends Notification
             print_r($json);
             $data = $json;
 
-            return $json;
         }
-//        $refid=$data["reference"];
+
+        $refid=$data["reference"];
+        return $json;
 //        $amount=$data["amount"];
 //        $no=$data["receiving_account"];
 //        $narration=$data['sender_narration']. " Funding";
