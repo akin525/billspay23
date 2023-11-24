@@ -270,24 +270,26 @@
                                     </div>
                                 </div>
 
-{{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
-{{--                                    <div class="card ov-card">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="ana-box">--}}
-{{--                                                <div class="ic-n-bx">--}}
-{{--                                                    <div class="icon-box bg-primary ">--}}
-{{--                                                        <i class="fa fa-cart-shopping text-white"></i>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="anta-data">--}}
-{{--                                                    <h5>Buy</h5>--}}
-{{--                                                    <span>& Sell</span>--}}
-{{--                                                    <h3>-3%</h3>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="col-xl-2 col-sm-4 col-6">
+                                    <a href="{{url('tv')}}">
+                                    <div class="card ov-card">
+                                        <div class="card-body">
+                                            <div class="ana-box">
+                                                <div class="ic-n-bx">
+                                                    <div class="icon-box bg-primary ">
+                                                        <i class="fa fa-cart-shopping text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="anta-data">
+                                                    <h5>Pay</h5>
+                                                    <span>& Tv</span>
+                                                    <h3>-3%</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
 {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
 {{--                                    <div class="card ov-card">--}}
 {{--                                        <div class="card-body">--}}
