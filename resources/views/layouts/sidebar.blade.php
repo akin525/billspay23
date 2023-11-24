@@ -5,7 +5,7 @@
     <!-- PAGE TITLE HERE -->
     <title>@yield('tittle')</title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('dashboard/images/bills.png')}}">
+    <link rel="shortcut icon" type="image/png" href="https://billspay.ashmarkets.com/bills.png">
 
     <link href="{{asset('dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/vendor/swiper/css/swiper-bundle.min.css')}}" rel="stylesheet">

@@ -6,7 +6,7 @@
     <meta name="keywords" content="advert sharing, watching advert">
     <meta name="author" content="BillsPay">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('bills.png')}}">
+    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/bills.png">
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{{asset('auth/assets/css/core/libs.min.css')}}">
