@@ -76,8 +76,6 @@
 
 
                                 </div>
-                                <br/>
-                                <br/>
                                 <div class="col-sm-4">
                                     <br/>
                                     <br/>
@@ -114,7 +112,6 @@
 
 
         </div>
-    </div>
 
 @endsection
 @section('script')
