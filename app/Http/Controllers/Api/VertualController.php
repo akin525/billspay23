@@ -169,12 +169,11 @@ class VertualController  extends Notification
         if ($json = json_decode(file_get_contents("php://input"), true)) {
 //            print_r($json['reference']);
 
-//            print_r('samson Akinlabi');
-//            print_r($json);
-            $data = $json;
-
+            return $request;
 
         }
+        $data = $json;
+
         $refid=$data["reference"];
         $amount=$data["amount"];
         $no=$data["receiving_account"];

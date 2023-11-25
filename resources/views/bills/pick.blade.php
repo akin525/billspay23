@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle', 'Choose Network')
 @section('content')
 

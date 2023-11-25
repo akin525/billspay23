@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle', 'Waec Card Purchase')
 @section('content')
     @vite(['resources/css/app.css', 'resources/js/app.js'])

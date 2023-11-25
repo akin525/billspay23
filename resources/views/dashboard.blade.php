@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle','Dashboard')
 @section('content')
     <script src="{{ asset('js/Chart.min.js') }}"></script>

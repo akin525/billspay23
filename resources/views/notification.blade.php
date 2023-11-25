@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle', 'Notifications')
 @section('content')
     <div class="row">

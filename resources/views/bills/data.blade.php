@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle', 'Buy Data')
 @section('content')
     <div class="row">
@@ -40,38 +40,20 @@
                     <span class="accordion-header-text">MTN SME</span>
                     <span class="accordion-header-indicator"></span>
                 </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-one">
-                <br/>
+                <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
 
-
-
-                            <div class="col-xl-3  col-sm-6">
-                                <div class="card card-body overflow-hidden">
-                                    <div class="row">
-                                            <div class="dropdown bootstrap-select default-select form-control wide mb-3 form-control-lg">
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            <select name="productid" class="default-select form-control " id="secondSelect" >
+            </div>
+            <select name="productid" class=" form-control " id="secondSelect" >
                 <option>Select Your Plan</option>
                 @foreach($netm as $mtn)
                     <option value={{$mtn['id']}}"">{{$mtn['plan']}} ₦{{$mtn['tamount']}}</option>
                 @endforeach
             </select>
-            <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
             <button type="submit" class="btn btn-primary">Purchase Now</button>
 
-        </div>
             @endif
+
+
         @if($request== "AIRTEL")
         <div class="accordion card accordion-with-icon" id="accordion-six">
             <div class="accordion-item">
@@ -80,39 +62,20 @@
                     <span class="accordion-header-text">AIRTEL DATA</span>
                     <span class="accordion-header-indicator"></span>
                 </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-one">
-                <br/>
 
 
-
-                            <div class="col-xl-3  col-sm-6">
-                                <div class="card card-body overflow-hidden">
-                                    <div class="row">
-                                            <div class="dropdown bootstrap-select default-select form-control wide mb-3 form-control-lg">
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-
-            <select name="productid" class="default-select form-control wide mb-3 form-control-lg" id="secondSelect" tabindex="null">
-                <option>Select Your Plan</option>
-                @foreach($neta as $air)
-                    <option value={{$air['id']}}"">{{$air['network']}} {{$air['plan']}} ₦{{$air['tamount']}}</option>
-                @endforeach
-            </select>
             <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
 
-            <button type="submit" class="btn btn-primary">Purchase Now</button>
 
         </div>
+                <select name="productid" class=" form-control wide mb-3 form-control-lg" id="secondSelect">
+                    <option>Select Your Plan</option>
+                    @foreach($neta as $air)
+                        <option value={{$air['id']}}"">{{$air['network']}} {{$air['plan']}} ₦{{$air['tamount']}}</option>
+                    @endforeach
+                </select>
+            <button type="submit" class="btn btn-primary">Purchase Now</button>
+
             @endif
 
         @if($request== "GLO")
@@ -123,37 +86,19 @@
                     <span class="accordion-header-text">GLO DATA</span>
                     <span class="accordion-header-indicator"></span>
                 </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-one">
-                <br/>
-
-
-                            <div class="col-xl-3  col-sm-6">
-                                <div class="card card-body overflow-hidden">
-                                    <div class="row">
-                                            <div class="dropdown bootstrap-select default-select form-control wide mb-3 form-control-lg">
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
                 </div>
-            <select name="productid" class="default-select form-control wide mb-3 form-control-lg" id="secondSelect" tabindex="null">
-                <option>Select Your Plan</option>
-                @foreach($netg as $air3)
-                    <option value={{$air3['id']}}"">{{$air3['network']}} {{$air3['plan']}} ₦{{$air3['tamount']}}</option>
-                @endforeach
-            </select>
+
             <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
 
-            <button type="submit" class="btn btn-primary">Purchase Now</button>
-
         </div>
+                <select name="productid" class="form-control wide mb-3 form-control-lg" id="secondSelect" >
+                    <option>Select Your Plan</option>
+                    @foreach($netg as $air3)
+                        <option value={{$air3['id']}}"">{{$air3['network']}} {{$air3['plan']}} ₦{{$air3['tamount']}}</option>
+                    @endforeach
+                </select>
+                <button type="submit" class="btn btn-primary">Purchase Now</button>
+
             @endif
 
         @if($request== "9MOBILE")
@@ -164,38 +109,18 @@
                     <span class="accordion-header-text">9MOBILE DATA</span>
                     <span class="accordion-header-indicator"></span>
                 </div>
-                <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-bs-parent="#accordion-one">
-                <br/>
+            <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
 
 
-
-                            <div class="col-xl-3  col-sm-6">
-                                <div class="card card-body overflow-hidden">
-                                    <div class="row">
-                                            <div class="dropdown bootstrap-select default-select form-control wide mb-3 form-control-lg">
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-
-{{--                                                <br>--}}
-{{--                                                <br>--}}
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            <select name="productid" class="default-select form-control wide mb-3 form-control-lg" id="secondSelect" tabindex="null">
+        </div>
+            <select name="productid" class="form-control wide mb-3 form-control-lg" id="secondSelect" >
                 <option>Select Your Plan</option>
                 @foreach($net9 as $air3)
                     <option value={{$air3['id']}}"">{{$air3['network']}} {{$air3['plan']}} ₦{{$air3['tamount']}}</option>
                 @endforeach
             </select>
-            <input type="hidden" name="refid" value="<?php echo rand(10000000, 999999999); ?>">
-
             <button type="submit" class="btn btn-primary">Purchase Now</button>
 
-        </div>
             @endif
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle', 'Neco Card Purchase')
 @section('content')
     <div class="page-wrapper" style="background-color: #0a4021">
