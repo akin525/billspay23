@@ -5,12 +5,12 @@
     <title>@yield('tittle')</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="https://billspay.ashmarkets.com/bills.png">
-
     <link href="{{asset('style1.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('color_2.css')}}" />
     <link href="{{asset('dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/vendor/swiper/css/swiper-bundle.min.css')}}" rel="stylesheet">
-    <link href="{{asset('dashboard/vendor/swiper/css/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/vendor/swiper/css/swiper-bund
+==le.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('dashboard/cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css')}}">
     <link href="{{asset('dashboard/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css')}}" rel="stylesheet">
