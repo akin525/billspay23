@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-6">
                         <div class="bgl-primary rounded p-3">
-                            <h4 class="mb-0">MCD Balance</h4>
+                            <h4 class="mb-0">SAMMIGHTY Balance</h4>
                             <h4><b>₦{{number_format(intval($tran *1))}}</b></h4>
 
                         </div>

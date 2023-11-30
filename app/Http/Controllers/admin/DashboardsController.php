@@ -39,12 +39,12 @@ public function dashboard(Request $request)
     $charge=charges::sum('amount');
         $bill = bill::sum('amount');
 
-        $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
+        $resellerURL = 'https://pay.sammighty.com.ng/api/dashboard';
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $resellerURL . 'me',
+            CURLOPT_URL => $resellerURL,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -54,9 +54,8 @@ public function dashboard(Request $request)
             CURLOPT_SSL_VERIFYHOST => 0,
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('service' => 'balance'),
             CURLOPT_HTTPHEADER => array(
-                'Authorization: mcd_key_aq9vGp2N8679cX3uAU7zIc3jQfd'
+                'apikey: sk-RwQM6hymqWCe43ct3esB'
             ),
         ));
 
@@ -65,9 +64,7 @@ public function dashboard(Request $request)
         curl_close($curl);
 //                                                        return $response;
         $data = json_decode($response, true);
-        $success = $data["success"];
-        $tran = $data["data"]["wallet"];
-        $pa = $data["data"]["commission"];
+        $tran = $data["user"]["wallet"];
 
         $today = Carbon::now()->format('Y-m-d');
 
