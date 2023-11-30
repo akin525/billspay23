@@ -1,7 +1,6 @@
 @extends('admin.layouts.sidebar1')
 @section('tittle', 'product')
 @section('content')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     <style>
         /*  Toggle Switch  */
