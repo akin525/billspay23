@@ -26,7 +26,7 @@ public function index()
     }
     public function index2()
     {
-        $product=samm::paginate(50);
+        $product=samm::paginate(200);
 
         return view('admin/product/product2', compact('product'));
     }
