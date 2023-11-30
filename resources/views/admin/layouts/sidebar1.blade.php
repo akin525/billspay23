@@ -147,7 +147,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{route('admin/user)}}"><i class="fa fa-user"></i> <span>All Users</span></a>
+                            <a href="{{route('admin/user')}}"><i class="fa fa-user"></i> <span>All Users</span></a>
                         </li>
                         <li>
                             <a href="{{route('admin/credit')}}"><i class="fa fa-money"></i> <span>Credit User</span></a>
