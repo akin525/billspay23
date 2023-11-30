@@ -140,8 +140,8 @@
                             <a href="{{route('admin/deposits')}}"><i class="fa fa-money"></i> <span>All Deposit</span></a>
                         </li>
                         <li>
-                            <a href="#app2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cart-shopping"></i> <span>Product Controller</span></a>
-                            <ul class="collapse list-unstyled" id="app2">
+                            <a href="#app5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cart-shopping"></i> <span>Product Controller</span></a>
+                            <ul class="collapse list-unstyled" id="app5">
                                 <li><a href="{{ route('admin/product2') }}"><i class="fa fa-cart-plus orange_color"></i> <span>Sammighty Product</span></a></li>
 
                             </ul>
