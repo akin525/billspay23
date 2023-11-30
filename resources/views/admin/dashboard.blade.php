@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2">
                         <h3 class="mb-3">Quick Button</h3>
-                        <p class="mb-0 text-primary pb-4">Get more bonus<br> on our platform</p>
+{{--                        <p class="mb-0 text-primary pb-4">Get more bonus<br> on our platform</p>--}}
                     </div>
                     <div class="col-xl-10">
                         <div class="row">

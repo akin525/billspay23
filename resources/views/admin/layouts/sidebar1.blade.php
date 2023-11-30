@@ -107,19 +107,14 @@
                                 <div class="user_img"><img class="img-responsive" src="{{asset("user_img.jpg")}}" alt="#" /></div>
                             <div class="user_info">
                                 <h6> {{ Auth::user()->username }}</h6>
-                                <p><span class="online_animation"></span> Admin</p>
+                                <p><span class="online_animation"></span>Admin</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="sidebar_blog_2">
-                    <h4>
-                        <a href="#" target=”_blank” class="font-weight-bold text-center">
-                            <img width="150" src="{{asset('dd.png')}}" alt="">
 
-                        </a>
-                    </h4>
                     <ul class="list-unstyled components">
                         <li class="active">
                             <a href="{{ route('admin/dashboard') }}"  ><i class="fa fa-dashboard white_color"></i> <span>Dashboard</span></a>
