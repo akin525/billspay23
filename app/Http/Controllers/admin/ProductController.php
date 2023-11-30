@@ -6,7 +6,6 @@ use App\Models\airtimecons;
 use App\Models\big;
 use App\Models\data;
 use App\Models\samm;
-use App\Models\samm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;

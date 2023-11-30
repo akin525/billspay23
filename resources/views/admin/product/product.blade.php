@@ -225,7 +225,7 @@
                             <tr>
                                 <th>Network</th>
                                 <th>Plan</th>
-                                <th>Actual Amount</th>
+{{--                                <th>Actual Amount</th>--}}
                                 <th>Selling Amount</th>
                                 <th>Reseller Amount</th>
                                 <th>Status</th>
@@ -238,7 +238,7 @@
                                 <tr>
                                     <td> {{$seller->network}} </td>
                                     <td> {{$seller->name}}</td>
-                                    <td> {{$seller->amount}}</td>
+{{--                                    <td> {{$seller->amount}}</td>--}}
                                     <td> {{$seller->tamount}}</td>
                                     <td> {{$seller->ramount}}</td>
                                   <td>@if($seller->status=="1")<h6 class="badge badge-primary">Active</h6>@else<h6
