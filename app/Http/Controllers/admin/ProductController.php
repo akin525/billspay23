@@ -5,7 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Models\airtimecons;
 use App\Models\big;
 use App\Models\data;
-use App\Models\easy;
+use App\Models\samm;
+use App\Models\samm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -26,7 +27,7 @@ public function index()
     }
     public function index2()
     {
-        $product=easy::paginate(50);
+        $product=samm::paginate(50);
 
         return view('admin/product/product2', compact('product'));
     }
@@ -64,7 +65,7 @@ public function on(Request $request)
     }
     public function on2(Request $request)
     {
-        $product = easy::where('id', $request->id)->first();
+        $product = samm::where('id', $request->id)->first();
 
         if ($product->status == "1") {
             $give = "0";
@@ -95,7 +96,7 @@ return view('admin.product.editproduct', compact('pro'));
     public function in2(Request $request)
     {
 
-        $pro=easy::where('id', $request->id)->first();
+        $pro=samm::where('id', $request->id)->first();
 
         return view('admin/product/editproduct2', compact('pro'));
     }
@@ -148,7 +149,7 @@ public function edit(Request $request)
             'ramount' => 'required',
             'name' => 'required',
         ]);
-        $pro=easy::where('id', $request->id)->first();
+        $pro=samm::where('id', $request->id)->first();
         $pro->plan=$request->name;
         $pro->tamount=$request->tamount;
         $pro->ramount=$request->ramount;
