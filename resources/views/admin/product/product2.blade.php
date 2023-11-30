@@ -260,7 +260,7 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <button  type="button" class="btn-primary" onclick="openModal(this)" data-user-id="{{$seller->id}}" data-user-name="{{$seller->plan}}" >
+                                        <button  type="button" class="badge badge-success" onclick="openModal(this)" data-user-id="{{$seller->id}}" data-user-name="{{$seller->plan}}" >
                                             <i class="fa fa-edit"></i>
                                         </button>
                                     </td>
