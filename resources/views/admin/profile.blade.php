@@ -1,4 +1,4 @@
-@extends('admin.layouts.sidebar')
+@extends('admin.layouts.sidebar1')
 @section('tittle', $user['name'].' page')
 @section('content')
     <div class="row">

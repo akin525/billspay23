@@ -6,7 +6,7 @@
     <meta name="keywords" content="advert sharing, watching advert">
     <meta name="author" content="RENO">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('efe1.png')}}">
+    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/bills.png">
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{{asset('auth/assets/css/core/libs.min.css')}}">
@@ -181,7 +181,7 @@
 <div id="loading">
     <div class="loader simple-loader">
         <div class="loader-body ">
-            <img width="100" src="{{asset('efe1.png')}}" alt="loader" class="image-loader img-fluid ">
+            <img width="100" src="{{asset('bills.png')}}" alt="loader" class="image-loader img-fluid ">
         </div>
     </div>
 </div>
@@ -194,7 +194,7 @@
             <div class="col-md-12 col-lg-6 align-self-center">
                 <a href="/login" class="navbar-brand d-flex align-items-center mb-3 justify-content-center text-primary">
                     <div class="logo-normal">
-                        <img width="100" src="{{asset('efe.png')}}" alt=""/>
+                        <img width="100" src="{{asset('bills.png')}}" alt=""/>
                     </div>
                     {{--                    <h2 class="logo-title ms-3 mb-0">EFE MOBILE MONEY</h2>--}}
                 </a>
@@ -254,7 +254,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-lg-block d-none bg-black  p-0  overflow-hidden">
-                <img width="100" src="{{asset('bab.png')}}" class="img-fluid gradient-main" alt="images" loading="lazy" >
+                <img width="100" src="{{asset('sd.png')}}" class="img-fluid gradient-main" alt="images" loading="lazy" >
             </div>
         </div>
     </section>

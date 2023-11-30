@@ -1,4 +1,4 @@
-@extends('admin.layouts.sidebar')
+@extends('admin.layouts.sidebar1')
 @section('tittle', 'Airtime server')
 @section('content')
     <style>

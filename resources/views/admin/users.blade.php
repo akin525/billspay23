@@ -1,4 +1,4 @@
-@extends('admin.layouts.sidebar')
+@extends('admin.layouts.sidebar1')
 @section('tittle', 'All Users')
 @section('content')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
