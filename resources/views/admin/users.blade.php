@@ -46,7 +46,7 @@
                                 <div class="card-body">
                                     <div class="card-use-box">
                                         <div class="crd-bx-img">
-                                            <img width="200" src="{{asset('efe.png')}}" class="rounded-circle" alt="">
+                                            <img width="200" src="{{asset('bills.png')}}" class="rounded-circle" alt="">
                                             <div class="active"></div>
                                         </div>
                                         <div class="card__text">
