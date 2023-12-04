@@ -102,7 +102,7 @@ class AlltvController
         $data = json_decode($response, true);
         $success= $data["success"];
         if($success== 1){
-            $name=$data["message"];
+            $name=$data["name"];
 
             $log=$name;
         }else{
