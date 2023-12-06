@@ -44,6 +44,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::view('deleteaccount', 'auth.delete');
 Route::post('log', [\App\Http\Controllers\DashboardController::class, 'log'])->name('log');
 
 Route::get('list', [\App\Http\Controllers\listdata::class, 'list'])->name('list');
