@@ -12,6 +12,7 @@ use App\Models\bo;
 use App\Models\data;
 use App\Models\Messages;
 use App\Models\refer;
+use App\Models\samm;
 use App\Models\transaction;
 use App\Models\User;
 use App\Models\wallet;
@@ -124,7 +125,7 @@ class AlltvController
         {
             if (Auth::check()) {
                 $user = User::find($request->user()->id);
-                $tv = data::where('id', $request->productid)->first();
+                $tv = samm::where('id', $request->productid)->first();
 
                 $wallet = wallet::where('username', $user->username)->first();
 
@@ -141,7 +142,7 @@ class AlltvController
                     return response()->json( $mg, Response::HTTP_BAD_REQUEST);
 
                 }
-                $bo = bill::where('refid', $request->refid)->first();
+                $bo = bill::where('transactionid', $request->refid)->first();
                 if (isset($bo)) {
                     $mg = "duplicate transaction";
                     return response()->json( $mg, Response::HTTP_CONFLICT);
@@ -153,12 +154,12 @@ class AlltvController
                     $wallet->balance = $gt;
                     $wallet->save();
 
-                    $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
+                    $resellerURL = 'http://pay.sammighty.com.ng/api/';
 
                     $curl = curl_init();
 
                     curl_setopt_array($curl, array(
-                        CURLOPT_URL => $resellerURL.'pay',
+                        CURLOPT_URL => $resellerURL.'paytv',
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_ENCODING => '',
                         CURLOPT_MAXREDIRS => 10,
@@ -166,7 +167,7 @@ class AlltvController
                         CURLOPT_FOLLOWLOCATION => true,
                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                         CURLOPT_CUSTOMREQUEST => 'POST',
-                        CURLOPT_POSTFIELDS => array('service' => 'tv', 'coded' => $tv->cat_id, 'phone' => $request->number),
+                        CURLOPT_POSTFIELDS => array( 'coded' => $tv->plan_id, 'number' => $request->number, 'refid'=>$request->refid),
                         CURLOPT_HTTPHEADER => array(
                             'Authorization: mcd_key_aq9vGp2N8679cX3uAU7zIc3jQfd'
                         )
@@ -182,17 +183,17 @@ class AlltvController
 
 //                        return $response;
                     if ($success == 1) {
-                        $tran1 = $data["discountAmount"];
+//                        $tran1 = $data["discountAmount"];
 
                         $bo =bill::create([
                             'username' => $user->username,
                             'product' => $tv->name,
                             'amount' => $tv->tamount,
                             'server_response' => $response,
-                            'status' => $success,
+                            'status' => 1,
                             'phone' => $request->number,
                             'transactionid' => $request->refid,
-                            'discountamount' => $tran1,
+                            'discountamount' => 0,
                             'paymentmethod'=>'wallet',
                         ]);
                         $transaction=transaction::create([
@@ -210,7 +211,7 @@ class AlltvController
 //                            'data' => $responseData // If you want to include additional data
                         ]);
 
-                    }elseif ($success==0){
+                    }else{
                         $zo=$user->balance+$tv->tamount;
                         $user->balance = $zo;
                         $user->save();
