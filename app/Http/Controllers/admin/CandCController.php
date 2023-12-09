@@ -80,8 +80,8 @@ public function credit(Request $request)
             $admin = 'info@efemobilemoney.com';
 
             $receiver = $user->email;
-            Mail::to($receiver)->send(new Emailfund($deposit));
-            Mail::to($admin)->send(new Emailfund($deposit));
+//            Mail::to($receiver)->send(new Emailfund($deposit));
+//            Mail::to($admin)->send(new Emailfund($deposit));
             $mo=$request->username." was successful fund with NGN".$request->amount;
 
             return response()->json(['status'=>'success', 'message'=>$mo]);
