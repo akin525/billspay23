@@ -10,7 +10,7 @@
                 <div class="admin-user">
                     <div class="img-wrraper">
                         <div class="">
-                            <img src="{{asset('bills.png')}}" class="rounded-circle"></div>
+                            <img src="{{asset('logo.jpeg')}}" class="rounded-circle"></div>
                         <a class="icon-wrapper" href="#"><i class="fa-solid fa-pencil"></i></a>
                     </div>
                     <div class="user-details">

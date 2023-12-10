@@ -39,7 +39,7 @@ class VertualController
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_CUSTOMREQUEST => 'POST',
                 CURLOPT_POSTFIELDS => array('lastname' => $user['name'],
-                    'firstname' => 'BILLSPAY',
+                    'firstname' => 'PAYDOW',
                     'email' => $user['email'], 'dob' => $user['dob'],
                     'address' => $user['address'], 'gender' => $user['gender'],
                     'phone' => $user['phone']),

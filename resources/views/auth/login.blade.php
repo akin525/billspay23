@@ -6,7 +6,7 @@
     <meta name="keywords" content="advert sharing, watching advert">
     <meta name="author" content="BillsPay">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/bills.png">
+    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/logo.jpeg">
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{{asset('auth/assets/css/core/libs.min.css')}}">
@@ -183,7 +183,7 @@
 <div id="loading">
     <div class="loader simple-loader">
         <div class="loader-body ">
-            <img width="100" src="{{asset('bills.png')}}" alt="loader" class="image-loader img-fluid ">
+            <img width="100" src="{{asset('logo.jpeg')}}" alt="loader" class="image-loader img-fluid ">
         </div>
     </div>
 </div>
@@ -200,7 +200,7 @@
                 <br>
                 <a href="/login" class="navbar-brand d-flex align-items-center mb-3 justify-content-center text-primary">
                     <div class="logo-normal">
-                        <img width="100" src="{{asset('bills.png')}}" alt=""/>
+                        <img width="100" src="{{asset('logo.jpeg')}}" alt=""/>
                     </div>
 {{--                    <h2 class="logo-title ms-3 mb-0">EFE MOBILE MONEY</h2>--}}
                 </a>

@@ -4,7 +4,7 @@
     <!-- PAGE TITLE HERE -->
     <title>@yield('tittle')</title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://billspay.ashmarkets.com/bills.png">
+    <link rel="shortcut icon" type="image/png" href="https://billspay.ashmarkets.com/logo.jpeg">
     <link href="{{asset('style1.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('color_2.css')}}" />
     <link href="{{asset('dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
@@ -98,7 +98,7 @@
                 <div class="sidebar_blog_1">
                     <div class="sidebar-header">
                         <div class="logo_section">
-                            <a href="{{route('account')}}"><img class="logo_icon img-responsive" src="{{asset("bills.png")}}" alt="#"></a>
+                            <a href="{{route('account')}}"><img class="logo_icon img-responsive" src="{{asset("logo.jpeg")}}" alt="#"></a>
                         </div>
                     </div>
                     <div class="sidebar_user_info">
@@ -180,7 +180,7 @@
                         <div class="full">
                             <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
                             <div class="logo_section m-1">
-                                <a href="{{ route('account') }}"><img class="img-responsive" src="{{asset("bills.png")}}" alt="#" /></a>
+                                <a href="{{ route('account') }}"><img class="img-responsive" src="{{asset("logo.jpeg")}}" alt="#" /></a>
                             </div>
                             <br>
                             {{--                        @if(Auth::user()->pin =="0")--}}

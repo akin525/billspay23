@@ -5,7 +5,7 @@
     <!-- PAGE TITLE HERE -->
     <title>@yield('tittle')</title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="https://billspay.ashmarkets.com/bills.png">
+    <link rel="shortcut icon" type="image/png" href="https://billspay.ashmarkets.com/logo.jpeg">
 
     <link href="{{asset('dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/vendor/swiper/css/swiper-bundle.min.css')}}" rel="stylesheet">
@@ -109,7 +109,7 @@
 
     <div class="nav-header">
         <a href="{{route('account')}}" class="brand-logo">
-            <img  class="logo-abbr text-center" width="50" src="{{asset('bills.png')}}" alt="" />
+            <img  class="logo-abbr text-center" width="50" src="{{asset('logo.jpeg')}}" alt="" />
         </a>
         <div class="nav-control">
             <div class="hamburger">
@@ -177,7 +177,7 @@
                                     <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <div class="header-info2 d-flex align-items-center">
                                             <div class="header-media">
-                                                <img src="{{asset('bills.png')}}" alt="">
+                                                <img src="{{asset('logo.jpeg')}}" alt="">
                                             </div>
                                         </div>
                                     </a>

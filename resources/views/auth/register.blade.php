@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title >BILLSPAY SIGN-UP PAGE</title>
+    <title >PAYDOW SIGN-UP PAGE</title>
     <meta name="description" content=" Efe Mobile Money  is a platform offers users opportunity to earn online by simply carrying out simple task such as advert sharing, watching advert ">
     <meta name="keywords" content="advert sharing, watching advert">
     <meta name="author" content="">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/bills.png">
+    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/logo.jpeg">
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{{asset('auth/assets/css/core/libs.min.css')}}">
@@ -176,7 +176,7 @@
 <div id="loading">
     <div class="loader simple-loader">
         <div class="loader-body ">
-            <img width="100" src="{{asset('bills.png')}}" alt="loader" class="image-loader img-fluid ">
+            <img width="100" src="{{asset('logo.jpeg')}}" alt="loader" class="image-loader img-fluid ">
         </div>
     </div>
 </div>
@@ -194,7 +194,7 @@
                     <div class="col-md-12 col-lg-6 align-self-center">
                         <a href="/register" class="navbar-brand d-flex align-items-center mb-3 justify-content-center text-primary">
                             <div class="logo-normal">
-                                <img width="100" src="{{asset('bills.png')}}" alt=""/>
+                                <img width="100" src="{{asset('logo.jpeg')}}" alt=""/>
 
                             </div>
                         </a>

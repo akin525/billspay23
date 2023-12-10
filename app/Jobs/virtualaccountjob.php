@@ -52,7 +52,7 @@ class virtualaccountjob implements ShouldQueue
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array('lastname' => $this->user['name'],
-                'firstname' => 'BILLSPAY',
+                'firstname' => 'PAYDOW',
                 'email' => $this->user['email'],'dob' => $this->user['dob'],
                 'address' => $this->user['address'],'gender' => $this->user['gender'],
                 'phone' =>$this->user['phone']),
