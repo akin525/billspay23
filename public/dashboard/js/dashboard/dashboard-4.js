@@ -821,7 +821,7 @@
         dataLabels: {
           enabled: false
         },
-        colors: ['#208b37','#ffd125'],
+        colors: ['#046CB5','#ffd125'],
         title: {
           text: ''
         },
