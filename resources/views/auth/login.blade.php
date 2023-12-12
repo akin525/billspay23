@@ -64,7 +64,7 @@
         height: 0;
         border-left: 0px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 10px solid #0e8006;
+        border-bottom: 10px solid #046cb5;
     }
 
     .subscribe p {

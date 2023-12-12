@@ -97,7 +97,7 @@
     }
 
     .subscribe .submit-btn:hover {
-        background-color: #0e8006;
+        background-color: #046cb5;
         box-shadow: -5px 6px 20px 0px rgba(88, 88, 88, 0.569);
     }
     button {
