@@ -13,7 +13,7 @@
             <form id="dataForm">
                 @csrf
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="">
                         <br>
                         <br>
                         <div id="AirtimePanel">
@@ -71,29 +71,29 @@
                     </div>
                     <br/>
                     <br/>
-                    <div class="col-sm-4 ">
-                        <br/>
-                        <br/>
-                        <div class="card bg-primary">
-                            <div class="card-header border-0">
-                                <h4 class="heading mb-0 text-white">Wallet & Bonus 😎</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div class="sales-bx">
-                                        <i class="fa fa-wallet text-yellow" style="font-size: 40px;"></i>
-                                        <h4>₦{{number_format(intval(Auth::user()->parentData->balance *1),2)}}</h4>
-                                        <span>Balance</span>
-                                    </div>
-                                    <div class="sales-bx">
-                                        <i class="fa fa-wallet text-yellow" style="font-size: 40px"></i>
-                                        <h4>₦{{number_format(intval(Auth::user()->parentData->bonus *1),2)}}</h4>
-                                        <span>Bonus</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-sm-4 ">--}}
+{{--                        <br/>--}}
+{{--                        <br/>--}}
+{{--                        <div class="card bg-primary">--}}
+{{--                            <div class="card-header border-0">--}}
+{{--                                <h4 class="heading mb-0 text-white">Wallet & Bonus 😎</h4>--}}
+{{--                            </div>--}}
+{{--                            <div class="card-body">--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <div class="sales-bx">--}}
+{{--                                        <i class="fa fa-wallet text-yellow" style="font-size: 40px;"></i>--}}
+{{--                                        <h4>₦{{number_format(intval(Auth::user()->parentData->balance *1),2)}}</h4>--}}
+{{--                                        <span>Balance</span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="sales-bx">--}}
+{{--                                        <i class="fa fa-wallet text-yellow" style="font-size: 40px"></i>--}}
+{{--                                        <h4>₦{{number_format(intval(Auth::user()->parentData->bonus *1),2)}}</h4>--}}
+{{--                                        <span>Bonus</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                 </div>
 
