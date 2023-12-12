@@ -194,7 +194,7 @@
             <div class="col-md-12 col-lg-6 align-self-center">
                 <a href="/login" class="navbar-brand d-flex align-items-center mb-3 justify-content-center text-primary">
                     <div class="logo-normal">
-                        <img width="100" src="{{asset('logo.jpeg')}}" alt=""/>
+                        <img width="100" src="{{asset('log.jpeg')}}" alt=""/>
                     </div>
                     {{--                    <h2 class="logo-title ms-3 mb-0">EFE MOBILE MONEY</h2>--}}
                 </a>
