@@ -6,7 +6,7 @@
     <meta name="keywords" content="advert sharing, watching advert">
     <meta name="author" content="BillsPay">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://billspay.ashmarkets.com/logo.jpeg">
+    <link rel="shortcut icon" href="https://paydow.ashmarkets.com/log.jpeg">
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{{asset('auth/assets/css/core/libs.min.css')}}">
@@ -183,7 +183,7 @@
 <div id="loading">
     <div class="loader simple-loader">
         <div class="loader-body ">
-            <img width="100" src="{{asset('logo.jpeg')}}" alt="loader" class="image-loader img-fluid ">
+            <img width="100" src="{{asset('log.jpeg')}}" alt="loader" class="image-loader img-fluid ">
         </div>
     </div>
 </div>
