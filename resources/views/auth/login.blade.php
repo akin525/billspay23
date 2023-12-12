@@ -82,7 +82,7 @@
         border-radius: 30px;
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
-        background-color: #0e8006;
+        background-color: #046cb5;
         color: #FFF;
         padding: 12px 25px;
         display: inline-block;
@@ -97,7 +97,7 @@
     }
 
     .subscribe .submit-btn:hover {
-        background-color: #0e8006;
+        background-color: #046cb5;
         box-shadow: -5px 6px 20px 0px rgba(88, 88, 88, 0.569);
     }
     button {
@@ -265,7 +265,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-lg-block d-none bg-black  p-0  overflow-hidden">
-                <img width="100" src="{{asset('sd.png')}}" class="img-fluid gradient-main" alt="images" loading="lazy" >
+                <img width="100" src="{{asset('pay.jpg')}}" class="img-fluid gradient-main" alt="images" loading="lazy" >
             </div>
         </div>
     </section>

@@ -56,7 +56,7 @@
         height: 0;
         border-left: 0px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 10px solid #0e8006;
+        border-bottom: 10px solid #046cb5;
     }
 
     .subscribe p {
@@ -74,7 +74,7 @@
         border-radius: 30px;
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
-        background-color: #0e8006;
+        background-color: #046cb5;
         color: #FFF;
         padding: 12px 25px;
         display: inline-block;
@@ -298,7 +298,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-lg-block d-none bg-primary p-0  overflow-hidden">
-                <img src="{{asset('sd.png')}}" class="img-fluid gradient-main" alt="images" loading="lazy" >
+                <img src="{{asset('pay.jpg')}}" class="img-fluid gradient-main" alt="images" loading="lazy" >
             </div>
         </div>
     </section>
