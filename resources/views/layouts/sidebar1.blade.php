@@ -122,12 +122,12 @@
 
                 </div>
                 <div class="sidebar_blog_2">
-                    <h4>
-                        <a href="#" target=”_blank” class="font-weight-bold text-center">
-                            <img width="150" src="{{asset('dd.png')}}" alt="">
+{{--                    <h4>--}}
+{{--                        <a href="#" target=”_blank” class="font-weight-bold text-center">--}}
+{{--                            <img width="150" src="{{asset('dd.png')}}" alt="">--}}
 
-                        </a>
-                    </h4>
+{{--                        </a>--}}
+{{--                    </h4>--}}
                     <ul class="list-unstyled components">
                         <li class="active">
                             <a href="{{ route('account') }}"  ><i class="fa fa-dashboard white_color"></i> <span>Dashboard</span></a>
