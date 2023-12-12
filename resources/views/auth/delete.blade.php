@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title >BILLSPAY DELETE ACCOUNT PAGE</title>
+    <title >PAYDOW DELETE ACCOUNT PAGE</title>
     <meta name="description" content=" Billspay Payment Platform ">
     <meta name="keywords" content="advert sharing, watching advert">
     <meta name="author" content="BillsPay">
