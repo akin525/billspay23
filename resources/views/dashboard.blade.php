@@ -10,7 +10,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2">
                             <h3 class="mb-3">Quick Transaction</h3>
-                            <p class="mb-0 text-primary pb-4">Get more bonus<br> on our platform</p>
+{{--                            <p class="mb-0 text-primary pb-4">Get more bonus<br> on our platform</p>--}}
                         </div>
                         <div class="col-xl-10">
                             <div class="row">
@@ -27,7 +27,7 @@
                                                     <div class="anta-data">
                                                         <h5>Buy</h5>
                                                         <span>Data</span>
-                                                        <h3>+23%</h3>
+{{--                                                        <h3>+23%</h3>--}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -46,7 +46,7 @@
                                                 <div class="anta-data">
                                                     <h5>Buy</h5>
                                                     <span>Airtime</span>
-                                                    <h3>-2%</h3>
+{{--                                                    <h3>-2%</h3>--}}
                                                 </div>
                                             </div>
                                         </div>
@@ -128,7 +128,7 @@
                                                     <div class="anta-data">
                                                         <h5>Pay</h5>
                                                         <span>& Tv</span>
-                                                        <h3>-3%</h3>
+{{--                                                        <h3>-3%</h3>--}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,26 +155,26 @@
                                                                     </div>
                                                                     </a>
                                                                 </div>
-                                {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
-                                {{--                                    <a href="{{url('tasks')}}">--}}
-                                {{--                                    <div class="card ov-card">--}}
-                                {{--                                        <div class="card-body">--}}
-                                {{--                                            <div class="ana-box">--}}
-                                {{--                                                <div class="ic-n-bx">--}}
-                                {{--                                                    <div class="icon-box bg-primary rounded-circle">--}}
-                                {{--                                                        <i class="fa fa-tasks text-white"></i>--}}
-                                {{--                                                    </div>--}}
-                                {{--                                                </div>--}}
-                                {{--                                                <div class="anta-data">--}}
-                                {{--                                                    <h5>Task</h5>--}}
-                                {{--                                                    <span>& Earn</span>--}}
-                                {{--                                                    <h3>+30%</h3>--}}
-                                {{--                                                </div>--}}
-                                {{--                                            </div>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                    </a>--}}
-                                {{--                                </div>--}}
+                                                                <div class="col-xl-2 col-sm-4 col-6">
+                                                                    <a href="#">
+                                                                    <div class="card ov-card">
+                                                                        <div class="card-body">
+                                                                            <div class="ana-box">
+                                                                                <div class="ic-n-bx">
+                                                                                    <div class="icon-box bg-primary rounded-circle">
+                                                                                        <i class="fa fa-tasks text-white"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="anta-data">
+                                                                                    <h5>Transfer</h5>
+                                                                                    <span>Money</span>
+{{--                                                                                    <h3>+30%</h3>--}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    </a>
+                                                                </div>
                                 {{--                                <div class="col-xl-2 col-sm-4 col-6">--}}
                                 {{--                                    <div class="card ov-card">--}}
                                 {{--                                        <div class="card-body">--}}
