@@ -191,7 +191,8 @@ class VertualController  extends Notification
             } else {
 
                 $char = settings::first();
-                $amount1 = $amount - $char->charges;
+//                $amount1 = $amount - $char->charges;
+                $amount1 = $amount;
 
 
                 $gt = $amount1 + $pt;
