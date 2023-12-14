@@ -19,6 +19,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 class VertualController
 {
+
     public function vertual(Request $request)
     {
         if (Auth::check()) {
