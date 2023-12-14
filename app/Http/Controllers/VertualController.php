@@ -40,8 +40,8 @@ class VertualController
                 CURLOPT_CUSTOMREQUEST => 'POST',
                 CURLOPT_POSTFIELDS => array('lastname' => $user['name'],
                     'firstname' => 'PAYDOW',
-                    'email' => $user['email'], 'dob' => $user['dob'],
-                    'address' => $user['address'], 'gender' => $user['gender'],
+                    'email' => $user['email'], 'dob' => "1999-03-18",
+                    'address' => "ondo Akure",'gender' => "Male",
                     'phone' => $user['phone']),
                 CURLOPT_HTTPHEADER => array(
                     'apikey: sk-RwQM6hymqWCe43ct3esB'
