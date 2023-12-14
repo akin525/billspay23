@@ -177,7 +177,7 @@ class VertualController  extends Notification
         $refid=$data["reference"];
         $amount=$data["amount"];
         $no=$data["receiving_account"];
-        $narration=$data['sender_narration']. " Funding";
+//        $narration=$data['sender_narration']. " Funding";
 
         $wallet = wallet::where('account_number', $no)->first();
         $pt=$wallet['balance'];
