@@ -228,34 +228,34 @@
                                                 <input type="email" class="form-control" id="email" name="email" placeholder="xyz@example.com">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="email" class="form-label">Address</label>
-                                                <input type="text" class="form-control" id="email" name="address" placeholder="address">
-                                            </div>
-                                        </div>
+{{--                                        <div class="col-lg-6">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="email" class="form-label">Address</label>--}}
+{{--                                                <input type="text" class="form-control" id="email" name="address" placeholder="address">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="phone" class="form-label">Phone No.</label>
                                                 <input type="number" class="form-control" id="phone" name="phone" placeholder="123456789">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="phone" class="form-label">Date Of Birth.</label>
-                                                <input type="date" class="form-control" name="dob" >
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label for="email" class="form-label">Gender</label>
-                                                <select name="gender" class="form-control" id="email" >
-                                                    <option>select gender</option>
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female">Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
+{{--                                        <div class="col-lg-6">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="phone" class="form-label">Date Of Birth.</label>--}}
+{{--                                                <input type="date" class="form-control" name="dob" >--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-12">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="email" class="form-label">Gender</label>--}}
+{{--                                                <select name="gender" class="form-control" id="email" >--}}
+{{--                                                    <option>select gender</option>--}}
+{{--                                                    <option value="Male">Male</option>--}}
+{{--                                                    <option value="Female">Female</option>--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="password" class="form-label">Password</label>

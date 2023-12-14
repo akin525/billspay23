@@ -53,8 +53,8 @@ class virtualaccountjob implements ShouldQueue
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array('lastname' => $this->user['name'],
                 'firstname' => 'PAYDOW',
-                'email' => $this->user['email'],'dob' => $this->user['dob'],
-                'address' => $this->user['address'],'gender' => $this->user['gender'],
+                'email' => $this->user['email'],'dob' => "1999-03-18",
+                'address' => "ondo Akure",'gender' => "Male",
                 'phone' =>$this->user['phone']),
             CURLOPT_HTTPHEADER => array(
                 'apikey: sk-RwQM6hymqWCe43ct3esB'
