@@ -201,7 +201,7 @@ class VertualController  extends Notification
                     'username' => $wallet->username,
                     'refid' =>  $reference,
                     'amount' => $amount,
-                    'narration'=>$narration,
+                    'narration'=>"Funding",
                     'iwallet' => $pt,
                     'fwallet' => $gt,
                 ]);
@@ -217,7 +217,7 @@ class VertualController  extends Notification
 
                 $transaction=transaction::create([
                     'username'=>$deposit['username'],
-                    'activities'=>$narration,
+                    'activities'=>"Funding Transfer",
                 ]);
 
 
