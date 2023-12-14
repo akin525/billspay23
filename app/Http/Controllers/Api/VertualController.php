@@ -169,7 +169,7 @@ class VertualController  extends Notification
         if ($json = json_decode(file_get_contents("php://input"), true)) {
 //            print_r($json['reference']);
 
-            return $request;
+//            return $request;
 
         }
         $data = $json;
