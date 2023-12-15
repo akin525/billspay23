@@ -234,12 +234,12 @@
 {{--                                                <input type="text" class="form-control" id="email" name="address" placeholder="address">--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="phone" class="form-label">Phone No.</label>
-                                                <input type="number" class="form-control" id="phone" name="phone" placeholder="123456789">
-                                            </div>
-                                        </div>
+{{--                                        <div class="col-lg-6">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="phone" class="form-label">Phone No.</label>--}}
+{{--                                                <input type="number" class="form-control" id="phone" name="phone" placeholder="123456789">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 {{--                                        <div class="col-lg-6">--}}
 {{--                                            <div class="form-group">--}}
 {{--                                                <label for="phone" class="form-label">Date Of Birth.</label>--}}
