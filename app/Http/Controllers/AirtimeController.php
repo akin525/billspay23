@@ -57,11 +57,15 @@ class AirtimeController
 
             $fbalance=$wallet->balance;
 
+
             $gt = $wallet->balance - $request->amount;
             $wallet->balance = $gt;
             $wallet->save();
 
-                    $bo = bill::create([
+            $per=2/100;
+            $comission=$per*$request->amount;
+
+            $bo = bill::create([
                         'username' => $user->username,
                         'product' => $request->id.'Airtime',
                         'amount' => $request->amount,
@@ -80,10 +84,11 @@ class AirtimeController
                         'activities'=>'Being Purchase Of Airtime to '.$request->number,
                     ]);
 
-//                    $comiS=Comission::create([
-//                        'username'=>Auth::user()->username,
-//                        'amount'=>$comission,
-//                    ]);
+                    $comiS=Comission::create([
+                        'username'=>Auth::user()->username,
+                        'amount'=>$comission,
+                    ]);
+
                     $bo['name']=$user->name;
                     $bo['email']=Auth::user()->email;
 
@@ -109,15 +114,17 @@ class AirtimeController
                     $am = "NGN $request->amount  Airtime Purchase Was Successful To";
                     $ph = $request->number;
 
-//                    $com=$wallet->bonus+$comission;
-//                    $wallet->bonus=$com;
-//                    $wallet->save();
+                    $com=$wallet->bonus+$comission;
+                    $wallet->bonus=$com;
+                    $wallet->save();
 
                     $parise=$comission."₦ Commission Is added to your wallet balance";
                     $receiver = $user->email;
+                    $msg=$am.' ' .$ph.' & '.$parise;
+
                     return response()->json([
                         'status' => 'success',
-                        'message' => $am.' ' .$ph,
+                        'message' => $msg,
 //                            'data' => $responseData // If you want to include additional data
                     ]);
                 } elseif ($success == 0) {
