@@ -41,7 +41,7 @@ class virtualaccountjob implements ShouldQueue
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://pay.sammighty.com.ng/api/createaccount',
+            CURLOPT_URL => 'https://pay.sammighty.com.ng/api/createaccount1',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -51,10 +51,9 @@ class virtualaccountjob implements ShouldQueue
             CURLOPT_SSL_VERIFYHOST => 0,
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('lastname' => $this->user['name'],
-                'firstname' => 'PAYDOW',
-                'email' => $this->user['email'],'dob' => "1999-03-18",
-                'address' => "ondo Akure",'gender' => "Male",
+            CURLOPT_POSTFIELDS => array('name' => $this->user['name'],
+                'uniqueid' => $this->user['username'].rand(000,999),
+                'email' => $this->user['email'],'webhook' => "https://paydow.ashmarkets.com/api/account1",
                 'phone' =>$this->user['phone']),
             CURLOPT_HTTPHEADER => array(
                 'apikey: sk-RwQM6hymqWCe43ct3esB'
@@ -68,8 +67,8 @@ class virtualaccountjob implements ShouldQueue
         if ($data['success']=="1"){
             $account = $data["data"]["data"]["account_name"];
             $number = $data["data"]["data"]["account_number"];
-            $bank = $data["data"]["data"]["provider"];
-            $refid = $data["data"]["data"]["reference"];
+            $bank = $data["data"]["data"]["bank_name"];
+            $refid = $data["data"]["data"]["account_reference"];
 
             $wallet->account_number = $number;
             $wallet->account_name= $account;
