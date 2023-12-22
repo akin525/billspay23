@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('run1', [VertualController::class, 'run1'])->name('run1');
+Route::post('account1', [VertualController::class, 'run2'])->name('account1');
 Route::post('run', [VertualController::class, 'run'])->name('run');
 Route::post('honor', [VertualController::class, 'honor'])->name('honor');
 Route::post('easy', [VertualController::class, 'eassy'])->name('easy');

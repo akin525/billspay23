@@ -224,6 +224,101 @@ class VertualController  extends Notification
 
 
 
+
+            }
+
+
+
+
+        }
+    }
+    public function run2(Request $request)
+    {
+//        $web = web::create([
+//            'webbook' => $request
+//        ]);
+
+        if ($json = json_decode(file_get_contents("php://input"), true)) {
+//            print_r($json['reference']);
+
+//            return $request;
+
+        }
+        $data = $json;
+
+        $refid=$data["ref"];
+        $amount=$data["amount"];
+        $no=$data["account_number"];
+//        $narration=$data['sender_narration']. " Funding";
+
+        $wallet = wallet::where('account_number', $no)->first();
+        $pt=$wallet['balance'];
+
+        if ($no == $wallet->account_number) {
+            $user = user::where('username', $wallet->username)->first();
+            $depo = deposit::where('refid', $refid)->first();
+            if (isset($depo)) {
+                echo "payment refid the same";
+                return $depo;
+            } else {
+
+                $char = settings::first();
+//                $amount1 = $amount - $char->charges;
+                $amount1 = $amount;
+
+
+                $gt = $amount1 + $pt;
+                $reference = $refid;
+
+                $deposit = deposit::create([
+                    'username' => $wallet->username,
+                    'refid' =>  $reference,
+                    'amount' => $amount,
+                    'narration'=>"Funding",
+                    'iwallet' => $pt,
+                    'fwallet' => $gt,
+                ]);
+                $charp = charges::create([
+                    'username' => $wallet->username,
+                    'refid' => $reference,
+                    'amount' => $char->charges,
+                    'iwallet' => $pt,
+                    'fwallet' => $gt,
+                ]);
+                $wallet->balance = $gt;
+                $wallet->save();
+
+                $transaction=transaction::create([
+                    'username'=>$deposit['username'],
+                    'activities'=>"Funding Transfer",
+                ]);
+
+
+                $url = 'https://pay.sammighty.com.ng/api/reseller';
+
+                $headers = array(
+                    'Content-Type: application/json',
+                    'apikey: sk-RwQM6hymqWCe43ct3esB'
+
+                );
+
+                $data1 = array(
+                    'refid' =>'Recharge'.$refid,
+                    'amount' => $amount
+                );
+
+                $options = array(
+                    'http' => array(
+                        'header' => implode("\r\n", $headers),
+                        'method' => 'POST',
+                        'content' => json_encode($data1),
+                    ),
+                );
+
+                $context = stream_context_create($options);
+                return file_get_contents($url, false, $context);
+
+
             }
 
 
