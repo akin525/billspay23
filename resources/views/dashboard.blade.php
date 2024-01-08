@@ -153,85 +153,73 @@
         </div>
 
 
-        <div class="col-xl-6">
-            <div class="card overflow-hidden">
-                <div class="card-body">
-                    <div class="any-card">
-                        <div class="c-con">
-                            <h4 class="heading mb-0">{{$greet}}<strong>{{Auth::user()->username}}!!</strong></h4>
-                            <span>Notification:</span>
-                            <h4 class="mt-3"><b>My Level</b></h4>
-{{--                            <div class="d-flex justify-content-sm-start justify-content-center">--}}
-{{--                                @if(Auth::user()->apikey ==null)--}}
-{{--                                    <a href="#" class="btn btn-danger m-2">Customer</a>--}}
-{{--                                    <a href="{{route('reseller')}}" class="btn btn-success m-2">Upgrade</a>--}}
-{{--                                @else--}}
-{{--                                    <a href="#" class="btn btn-danger m-2">Reseller</a>--}}
-{{--                                    <a href="#" class="btn btn-success">Upgraded!</a>--}}
-{{--                                @endif--}}
-
-
-{{--                            </div>--}}
-{{--                            <a href="#" class="btn btn-primary btn-sm">View Profile</a>--}}
-                        </div>
-                        <img src="{{asset('dashboard/images/analytics/developer_male.png')}}" class="harry-img" alt="">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary">
-                <div class="card-header border-0">
-                    <h4 class="heading mb-0 text-white">Wallet & Deposit 😎</h4>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div class="sales-bx">
-                            <i class="fa fa-wallet text-yellow" style="font-size: 40px;"></i>
-                            <h4>₦{{number_format(intval($wallet['balance'] *1),2)}}</h4>
-                            <span>Balance</span>
-                        </div>
-                        <div class="sales-bx">
-                            <i class="fa fa-wallet text-yellow" style="font-size: 40px"></i>
-                            <h4>₦{{number_format(intval($tdepo *1),2)}}</h4>
-                            <span>Total deposit</span>
+        <div class="col-xl-3  col-lg-6 col-sm-6">
+            <div class="widget-stat card">
+                <div class="card-body p-4">
+                    <div class="media ai-icon">
+									<span class="me-3 bgl-primary text-primary">
+										<!-- <i class="ti-user"></i> -->
+										<i class="fa fa-money"></i>
+									</span>
+                        <div class="media-body">
+                            <p class="mb-1">Wallet</p>
+                            <h4 class="mb-0">₦{{number_format(intval($wallet['balance'] *1),2)}}</h4>
+                            <span class="badge badge-primary">Balance</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="col-xl-3 col-md-6">
-            <div class="card" style="background: #394758!important">
-                <div class="card-header border-0">
-                    <h4 class="heading mb-0 text-white">Purchase & Bonus 😎</h4>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div class="sales-bx">
-{{--                            <img src="images/analytics/sales.png" alt="">--}}
-                            <i class="fa fa-wallet text-blue" style="font-size: 40px"></i>
-                            <h4>₦{{number_format(intval($tbill *1),2)}}</h4>
-                            <span>Total Bills</span>
+        <div class="col-xl-3  col-lg-6 col-sm-6">
+            <div class="widget-stat card">
+                <div class="card-body p-4">
+                    <div class="media ai-icon">
+									<span class="me-3 bgl-warning text-warning">
+                                        <i class="fa fa-money"></i>
+									</span>
+                        <div class="media-body">
+                            <p class="mb-1">Deposit</p>
+                            <h4 class="mb-0">₦{{number_format(intval($tdepo *1),2)}}</h4>
+                            <span class="badge badge-warning">Total</span>
                         </div>
-                        <div class="sales-bx">
-                            <i class="fa fa-wallet text-blue" style="font-size: 40px"></i>
-                            <h4>₦{{number_format(intval($wallet['bonus'] *1),2)}}</h4>
-                            <span>Bonus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3  col-lg-6 col-sm-6">
+            <div class="widget-stat card">
+                <div class="card-body  p-4">
+                    <div class="media ai-icon">
+									<span class="me-3 bgl-danger text-danger">
+                                        <i class="fa fa-money"></i>
+									</span>
+                        <div class="media-body">
+                            <p class="mb-1">Bills</p>
+                            <h4 class="mb-0">₦{{number_format(intval($tbill *1),2)}}</h4>
+                            <span class="badge badge-danger">Total</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3  col-lg-6 col-sm-6">
+            <div class="widget-stat card">
+                <div class="card-body p-4">
+                    <div class="media ai-icon">
+									<span class="me-3 bgl-success text-success">
+                                        <i class="fa fa-money"></i>
+									</span>
+                        <div class="media-body">
+                            <p class="mb-1">Cashback</p>
+                            <h4 class="mb-0">₦{{number_format(intval($wallet['bonus'] *1),2)}}</h4>
+                            <span class="badge badge-success">Bonus</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <style>
-           .bo {
-                max-width: 100%;
-                height: 200px;
-            }
-        </style>
+
         <hr>
 {{--        <div class="col-lg-6 col-sm-6">--}}
 {{--            <div class="card">--}}
