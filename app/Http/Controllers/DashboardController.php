@@ -9,6 +9,7 @@ use App\Models\bill;
 use App\Models\data;
 use App\Models\deposit;
 use App\Models\easy;
+use App\Models\Messages;
 use App\Models\samm;
 use App\Models\server;
 use App\Models\transaction;
@@ -74,8 +75,10 @@ class DashboardController
                         $greet = "Good night 🌚";
                     }
         $price=data::where('name', 'MTN 1gb - SME')->first();
+        $me = Messages::where('status', 1)->first();
 
-        return view('dashboard', compact('user','price', 'wallet', 'tdepo', 'tbill', 'greet', 'trans', 'dates', 'amounts'));
+        return view('dashboard', compact('user','price', 'wallet',
+            'tdepo', 'tbill', 'me', 'greet', 'trans', 'dates', 'amounts'));
     }
 
     public function airtimeindex()
