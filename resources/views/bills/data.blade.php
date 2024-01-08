@@ -10,7 +10,7 @@
 										<i class="la la-shopping-cart"></i>
 									</span>
                     <div class="media-body text-white">
-                        <p class="mb-1">MTN | AIRTEL | GLO | 9mobile</p>
+                        <p class="mb-1 text-white">MTN | AIRTEL | GLO | 9mobile</p>
                         <h3 class="text-white">Network</h3>
                         <div class="progress mb-2 bg-secondary">
                             <div class="progress-bar progress-animated bg-white" style="width: 90%"></div>

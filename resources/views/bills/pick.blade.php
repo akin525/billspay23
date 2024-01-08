@@ -3,6 +3,24 @@
 @section('content')
 
     <div class="row">
+        <div class="widget-stat card bg-primary">
+            <div class="card-body  p-4">
+                <div class="media">
+									<span class="me-3">
+										<i class="la la-shopping-cart"></i>
+									</span>
+                    <div class="media-body text-white">
+                        <p class="mb-1 text-white">MTN | AIRTEL | GLO | 9mobile</p>
+                        <h3 class="text-white">Network</h3>
+                        <div class="progress mb-2 bg-secondary">
+                            <div class="progress-bar progress-animated bg-white" style="width: 90%"></div>
+                        </div>
+                        <small>Excellent Range</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
         <style>
             img {
                 max-width: 100%;
