@@ -73,7 +73,9 @@ class DashboardController
                     if ($time >= "19") {
                         $greet = "Good night 🌚";
                     }
-        return view('dashboard', compact('user', 'wallet', 'tdepo', 'tbill', 'greet', 'trans', 'dates', 'amounts'));
+        $price=data::where('name', 'MTN 1gb - SME')->first();
+
+        return view('dashboard', compact('user','price', 'wallet', 'tdepo', 'tbill', 'greet', 'trans', 'dates', 'amounts'));
     }
 
     public function airtimeindex()
