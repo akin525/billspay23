@@ -22,12 +22,8 @@
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row py-4">
                     <div>
                         <h2 class="text-white pb-2 fw-bold">Welcome to Paydow</h2>
-                        <h5 class="text-white mb-2" style="font-size: 14px;"><p>Refer people to Paydow and earn N200 immediately the person upgrade his/her account to affiliate or topuser</p></h5>
-                        <p class="mb-0 text-white" style="font-size: 13px;"> <b>Referal Link:</b>
-                            <span class="data-toggle=" id="mytext">https://paydow.ashmarkets.com/register/?referal={{Auth::user()->username}}</span>
-{{--                            <span class="badge badge-dark" onclick="CopyToClipboard('mytext');" style="cursor: pointer;">copy</span>--}}
+                        <div class="card-title text-white" ><span id="greet"><b>{{$greet}} {{Auth::user()->username}}</b></span> </div> <hr>
 
-                        </p>
                     </div>
 {{--                    <div class="ml-md-auto py-2 py-md-0">--}}
 {{--                        <button type="button" class="btn btn-warning btn-round mr-2" data-toggle="modal" data-target="#fundWalletModal">--}}
@@ -47,11 +43,7 @@
                 <div class="col-md-12">
 
                     <div class="full-height">
-                        <div class="">
-                            <div class="card-title"><span id="greet"><b>{{$greet}} {{Auth::user()->username}}</b></span> </div> <hr>
-                            <p style="margin:10px; background-image:linear-gradient(45deg,#477f9a,#465abdd9);background-color:#ff0000;border-radius:10px;color:white;padding:7px;font-size:14px;"><span style="color:orange"><b>**NEW**</b></span>&nbsp; Own a paydow.ashmarkets.com retailer website and retail all our services; Such as DATA, Recharge cards printing, AIRTIME and BILLS Payment. <a class="w3-btn  w3-border w3-round-large" href="/vtu" style="background-color:white;color:blue;">Click Here</a></p>
-
-                        </div><b><b>
+                       <b><b>
 
                                 <marquee style="background-color: white; color:#d1026d; padding: 10px; font-size: 15px;;">  MTN SME NOW AVAILABLE @ {{$price->tamount}} PER GB </marquee>
 
