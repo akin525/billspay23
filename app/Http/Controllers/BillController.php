@@ -522,7 +522,11 @@ class BillController extends Controller
                         $name = $product->plan;
                         $am = "$product->name  was successful delivered to";
                         $ph = $request->number;
+                        $receiver = $user->email;
+                        $admin = 'info@paydow.ashmarkets.com.ng';
 
+                        Mail::to($receiver)->send(new Emailtrans($bo));
+                        Mail::to($admin)->send(new Emailtrans($bo));
                         return response()->json([
                             'status' => 'success',
                             'message' => $am.' ' .$ph,
