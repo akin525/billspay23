@@ -220,7 +220,12 @@ class VertualController  extends Notification
                     'username'=>$deposit['username'],
                     'activities'=>"Funding Transfer",
                 ]);
+                $admin= 'info@paydow.ashmarkets.com';
 
+                $receiver= $user->email;
+
+                Mail::to($receiver)->send(new Emailfund($deposit));
+                Mail::to($admin)->send(new Emailfund($deposit));
 
 
 
@@ -292,7 +297,12 @@ class VertualController  extends Notification
                     'username'=>$deposit['username'],
                     'activities'=>"Funding Transfer",
                 ]);
+                $admin= 'info@sammighty.com.ng';
 
+                $receiver= $user->email;
+
+                Mail::to($receiver)->send(new Emailfund($deposit));
+                Mail::to($admin)->send(new Emailfund($deposit));
 
                 $url = 'https://pay.sammighty.com.ng/api/reseller';
 
