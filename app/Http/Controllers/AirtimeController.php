@@ -121,7 +121,11 @@ class AirtimeController
                     $parise=$comission."₦ Commission Is added to your wallet balance";
                     $receiver = $user->email;
                     $msg=$am.' ' .$ph.' & '.$parise;
+                    $receiver = $user->email;
+                    $admin = 'info@paydow.ashmarkets.com';
 
+                    Mail::to($receiver)->send(new Emailtrans($bo));
+                    Mail::to($admin)->send(new Emailtrans($bo));
                     return response()->json([
                         'status' => 'success',
                         'message' => $msg,
@@ -134,11 +138,7 @@ class AirtimeController
 
 //                        Alert::error('error', $am.' ' .$ph);
 //                        return redirect()->route('viewpdf', $bo->id);
-                    $receiver = $user->email;
-                    $admin = 'info@paydow.ashmarkets.com';
 
-                    Mail::to($receiver)->send(new Emailtrans($bo));
-                    Mail::to($admin)->send(new Emailtrans($bo));
                     return response()->json([
                         'status' => 'fail',
                         'message' => 'Transaction Pending',
