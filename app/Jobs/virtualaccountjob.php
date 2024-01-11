@@ -54,7 +54,7 @@ class virtualaccountjob implements ShouldQueue
             CURLOPT_POSTFIELDS => array('name' => $this->user['name'],
                 'uniqueid' => $this->user['username'].rand(000,999),
                 'email' => $this->user['email'],'webhook' => "https://paydow.ashmarkets.com/api/account1",
-                'phone' =>$this->user['phone']),
+                'phone' =>"08146328645"),
             CURLOPT_HTTPHEADER => array(
                 'apikey: sk-RwQM6hymqWCe43ct3esB'
             ),

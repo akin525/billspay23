@@ -23,8 +23,9 @@ function regenrateaccount1($request)
 
 
     $curl = curl_init();
+
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://integration.mcd.5starcompany.com.ng/api/reseller/virtual-account3',
+        CURLOPT_URL => 'https://pay.sammighty.com.ng/api/createaccount1',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -34,13 +35,12 @@ function regenrateaccount1($request)
         CURLOPT_SSL_VERIFYHOST => 0,
         CURLOPT_SSL_VERIFYPEER => 0,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('account_name' => $name,
-            'business_short_name' => 'EFE','uniqueid' => $username,
-            'email' => $email,'dob' => $user['dob'],
-            'address' => $user['address'],'gender' => $user['gender'], 'provider'=>'providus',
-            'phone' =>$phone,'webhook_url' => 'https://app.efemobilemoney.com/api/run1'),
+        CURLOPT_POSTFIELDS => array('name' => $user['name'],
+            'uniqueid' => $user['username'].rand(0000, 9999),
+            'email' => $user['email'], 'webhook'=>'https://paydow.ashmarkets.com/api/account1',
+            'phone' => "08146328645"),
         CURLOPT_HTTPHEADER => array(
-            'Authorization: mcd_key_aq9vGp2N8679cX3uAU7zIc3jQfd'
+            'apikey: sk-RwQM6hymqWCe43ct3esB'
         ),
     ));
 
@@ -48,25 +48,28 @@ function regenrateaccount1($request)
 
     curl_close($curl);
     $data = json_decode($response, true);
-    if ($data['success']==1){
-        $account = $data["data"]["customer_name"];
-        $number = $data["data"]["account_number"];
-        $bank = $data["data"]["bank_name"];
-
-        $wallet->account_number=$number;
-        $wallet->account_name=$account;
-        $wallet->bank=$bank;
+//            return $response;
+    if ($data['success'] == "1") {
+        $account = $data["data"]["data"]["account_name"];
+        $number = $data["data"]["data"]["account_number"];
+        $bank = $data["data"]["data"]["bank_name"];
+        $refid = $data["data"]["data"]["account_reference"];
+        $wallet->account_number = $number;
+        $wallet->account_name = $account;
+        $wallet->bank = $bank;
+        $wallet->refid = $refid;
         $wallet->save();
-
-        $transaction=transaction::create([
-            'username'=>$user['username'],
-            'activities'=>'Virtual Account Generated Successfully',
+        $transaction = transaction::create([
+            'username' => $user['username'],
+            'activities' => 'Virtual Account Generated Successfully',
         ]);
 
-        Alert::success('Success', 'Account Details Generated Successful');
+        $msg="Account Generated Succesfully";
+        Alert::success('success', $msg);
         return back();
-    }elseif ($data['success']==0){
-        Alert::error('Oops', $response);
+    } elseif ($data['success'] == 0) {
+
+        Alert::error('Error', $response);
         return back();
     }
 }

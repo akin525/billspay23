@@ -42,7 +42,7 @@ class VertualController
                 CURLOPT_POSTFIELDS => array('name' => $user['name'],
                     'uniqueid' => $user['username'].rand(0000, 9999),
                     'email' => $user['email'], 'webhook'=>'https://paydow.ashmarkets.com/api/account1',
-                    'phone' => $user['phone']),
+                    'phone' => "08146328645"),
                 CURLOPT_HTTPHEADER => array(
                     'apikey: sk-RwQM6hymqWCe43ct3esB'
                 ),
