@@ -2,20 +2,20 @@
 @section('tittle','Dashboard')
 @section('content')
     <script src="{{ asset('js/Chart.min.js') }}"></script>
-    <script>
-        window.onload = function() {
-            setTimeout(function() {
-                var username = @json(Auth::user()->username);
-                var message = @json($me->message);
+{{--    <script>--}}
+    {{--    window.onload = function() {--}}
+    {{--        setTimeout(function() {--}}
+    {{--            var username = @json(Auth::user()->username);--}}
+    {{--            var message = @json($me->message);--}}
 
-                Swal.fire({
-                    title: 'Hi ' + username,
-                    html: message,
-                    icon: 'info'
-                });
-            }, 1000);
-        };
-    </script>
+    {{--            Swal.fire({--}}
+    {{--                title: 'Hi ' + username,--}}
+    {{--                html: message,--}}
+    {{--                icon: 'info'--}}
+    {{--            });--}}
+    {{--        }, 1000);--}}
+    {{--    };--}}
+    {{--</script>--}}
     <div class="row">
         <div class="panel-header   py-3 bubble-shadow" style="background: linear-gradient(to right, #132563,   #132563)!important">
             <div class="page-inner py-5">
