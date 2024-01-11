@@ -297,7 +297,8 @@ class VertualController  extends Notification
                     'username'=>$deposit['username'],
                     'activities'=>"Funding Transfer",
                 ]);
-                $admin= 'info@sammighty.com.ng';
+                $admin= 'info@paydow.ashmarkets.com';
+
 
                 $receiver= $user->email;
 
