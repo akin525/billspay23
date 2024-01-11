@@ -523,7 +523,7 @@ class BillController extends Controller
                         $am = "$product->name  was successful delivered to";
                         $ph = $request->number;
                         $receiver = $user->email;
-                        $admin = 'info@paydow.ashmarkets.com.ng';
+                        $admin = 'info@paydow.ashmarkets.com';
 
                         Mail::to($receiver)->send(new Emailtrans($bo));
                         Mail::to($admin)->send(new Emailtrans($bo));

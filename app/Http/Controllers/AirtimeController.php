@@ -135,7 +135,7 @@ class AirtimeController
 //                        Alert::error('error', $am.' ' .$ph);
 //                        return redirect()->route('viewpdf', $bo->id);
                     $receiver = $user->email;
-                    $admin = 'info@paydow.ashmarkets.com.ng';
+                    $admin = 'info@paydow.ashmarkets.com';
 
                     Mail::to($receiver)->send(new Emailtrans($bo));
                     Mail::to($admin)->send(new Emailtrans($bo));
