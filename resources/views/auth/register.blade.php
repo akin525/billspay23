@@ -287,7 +287,7 @@
                                         })
 
                                     </script>
-                                    <p class="text-center my-3">or sign in with other accounts?</p>
+{{--                                    <p class="text-center my-3">or sign in with other accounts?</p>--}}
                                     <p class="mt-3 text-center">
                                         Already have an Account <a href="{{route('login')}}" class="text-underline">Sign In</a>
                                     </p>
