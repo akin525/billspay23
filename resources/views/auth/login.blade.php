@@ -254,7 +254,7 @@
                                         })
 
                                     </script>
-                                    <p class="text-center my-3">or sign in with other accounts?</p
+{{--                                    <p class="text-center my-3">or sign in with other accounts?</p--}}
                                     <p class="mt-3 text-center">
                                         Don’t have an account? <a href="{{route('register')}}" class="text-underline">Click here to sign up.</a>
                                     </p>
