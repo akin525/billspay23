@@ -261,22 +261,22 @@
                                         Don’t have an account? <a href="{{route('register')}}" class="text-underline">Click here to sign up.</a>
                                     </p>
                                 </form>
-                                <button class="button" onclick="web2app.deviceInfo(myCallback);">Device Info</button>
-                                <button class="button" onclick="web2app.biometric.check(myCallback);">Check Biometric</button>
-                                <script>
-                                    function myCallback(data) {
-                                        alert(JSON.stringify(data));
-                                        console.log("I am in callback")
-                                        console.log(JSON.stringify(data));
-                                    }
+{{--                                <button class="button" onclick="web2app.deviceInfo(myCallback);">Device Info</button>--}}
+{{--                                <button class="button" onclick="web2app.biometric.check(myCallback);">Check Biometric</button>--}}
+{{--                                <script>--}}
+{{--                                    function myCallback(data) {--}}
+{{--                                        alert(JSON.stringify(data));--}}
+{{--                                        console.log("I am in callback")--}}
+{{--                                        console.log(JSON.stringify(data));--}}
+{{--                                    }--}}
 
-                                    function contactCallback(data) {
-                                        alert(JSON.stringify(data));
-                                        console.log("I am in callback")
-                                        console.log(JSON.stringify(data));
-                                        // document.getElementById('anyme').value=data.data;
-                                    }
-                                </script>
+{{--                                    function contactCallback(data) {--}}
+{{--                                        alert(JSON.stringify(data));--}}
+{{--                                        console.log("I am in callback")--}}
+{{--                                        console.log(JSON.stringify(data));--}}
+{{--                                        // document.getElementById('anyme').value=data.data;--}}
+{{--                                    }--}}
+{{--                                </script>--}}
 
                             </div>
                         </div>
