@@ -245,6 +245,8 @@
                                         <button type="submit" class="submit-btn btn-primary">Sign In <span class="load loading"></span></button>
                                     </div>
                                     <br/>
+                                    <button class="button" onclick="web2app.deviceInfo(myCallback);">Device Info</button>
+                                    <button class="button" onclick="web2app.biometric.check(myCallback);">Check Biometric</button>
                                     <script>
                                             const btns = document.querySelectorAll('button');
                                             btns.forEach((items)=>{
@@ -254,7 +256,22 @@
                                         })
 
                                     </script>
-{{--                                    <p class="text-center my-3">or sign in with other accounts?</p--}}
+                                    <script>
+                                        function myCallback(data) {
+                                            alert(JSON.stringify(data));
+                                            console.log("I am in callback")
+                                            console.log(JSON.stringify(data));
+                                        }
+
+                                        function contactCallback(data) {
+                                            alert(JSON.stringify(data));
+                                            console.log("I am in callback")
+                                            console.log(JSON.stringify(data));
+                                            // document.getElementById('anyme').value=data.data;
+                                        }
+                                    </script>
+
+                                    {{--                                    <p class="text-center my-3">or sign in with other accounts?</p--}}
                                     <p class="mt-3 text-center">
                                         Don’t have an account? <a href="{{route('register')}}" class="text-underline">Click here to sign up.</a>
                                     </p>
@@ -270,6 +287,7 @@
         </div>
     </section>
 </div>
+
 <!-- Library Bundle Script -->
 <script src="{{asset('auth/assets/js/core/libs.min.js')}}"></script>
 <!-- Plugin Scripts -->
