@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar1')
 @section('tittle', 'Transfer')
 @section('page', 'Withdraw')
 @section('content')
