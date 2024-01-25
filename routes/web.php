@@ -25,6 +25,7 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ResellerController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TransController;
+use App\Http\Controllers\TransferController;
 use App\Http\Controllers\VertualController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -132,6 +133,11 @@ Route::middleware([
 
 
     Route::get('virtual', [VertualController::class, 'vertual'])->name('virtual');
+
+    Route::get('verifyacct/{value1}/{value2}', [TransferController::class, 'verifyaccount'])->name('verifyacct');
+    Route::get('transfer', [TransferController::class, 'allbank'])->name('transfer');
+    Route::post('withdrawnow', [TransferController::class, 'withdraw'])->name('withdrawnow');
+
 });
 
 Route::get('/logout', function(){
@@ -197,6 +203,7 @@ Route::get('admin/dashboard', [DashboardsController::class, 'dashboard'])->name(
     Route::get('admin/editproduct/{id}', [ProductController::class, 'in'])->name('admin/editproduct');
     Route::get('admin/pd/{id}', [ProductController::class, 'on'])->name('admin/pd');
     Route::get('admin/pd1/{id}', [ProductController::class, 'on1'])->name('admin/pd1');
+
 
 
 
