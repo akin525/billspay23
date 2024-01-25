@@ -18,12 +18,12 @@ class TransferController
         $user=User::where('username', Auth::user()->username)->first();
         if ($user->bvn == null){
             $msg="Kindly Update your BVN on your profile";
-            return redirect('myaccount')->with('error', $msg);
+            return redirect('account')->with('error', $msg);
         }
 
         if ($user->withdraw == "0"){
             $msg="Transfer option not enable kindly contact the admin";
-            return redirect('myaccount')->with('error', $msg);
+            return redirect('account')->with('error', $msg);
         }else {
             $url = 'https://api.paylony.com/api/v1/bank_list';
 

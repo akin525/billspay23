@@ -33,6 +33,7 @@ class User extends Authenticatable
         'role',
         'phone',
         'bvn',
+        'withdraw',
         'dob',
         'apikey',
     ];
