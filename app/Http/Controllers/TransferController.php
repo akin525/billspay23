@@ -46,7 +46,7 @@ class TransferController
             $data = json_decode($response, true);
 
             $bank = $data["data"]["banks"];
-            return view('withdraw', compact('bank'));
+            return view('transfer', compact('bank'));
         }
     }
 
