@@ -39,6 +39,7 @@
 
 
             </div>
+            <div class="row">
             <div class="col-xl-6  col-lg-6 col-sm-6">
                 <div class="widget-stat card">
                     <div class="card-body p-4">
@@ -71,6 +72,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 
