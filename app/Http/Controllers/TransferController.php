@@ -158,12 +158,12 @@ class TransferController
             );
 
             $data = array(
-                "account_name"=>$request->name,
-                "account_number"=>$request->number,
+                "name"=>$request->name,
+                "number"=>$request->number,
                 "amount"=>$request->amount,
-                "bank_code"=>$request->id,
+                "id"=>$request->id,
                 "narration"=>$request->narration,
-                "reference"=>$request->refid,
+                "refid"=>$request->refid,
                 "sender_name"=>$request->name,
             );
 
