@@ -25,39 +25,7 @@
                         <div class="card-title text-white" ><span id="greet"><b>{{$greet}} {{Auth::user()->username}}</b></span> </div> <hr>
 
                     </div>
-                    <div class="col-xl-6  col-lg-6 col-sm-6">
-                        <div class="widget-stat card">
-                            <div class="card-body p-4">
-                                <div class="media ai-icon">
-									<span class="me-3 bgl-primary text-primary">
-										<!-- <i class="ti-user"></i> -->
-										<i class="fa fa-money"></i>
-									</span>
-                                    <div class="media-body">
-                                        <p class="mb-1">Wallet</p>
-                                        <h4 class="mb-0">₦{{number_format(intval($wallet['balance'] *1),2)}}</h4>
-                                        <span class="badge badge-primary">Balance</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6  col-lg-6 col-sm-6">
-                        <div class="widget-stat card">
-                            <div class="card-body p-4">
-                                <div class="media ai-icon">
-									<span class="me-3 bgl-warning text-warning">
-                                        <i class="fa fa-money"></i>
-									</span>
-                                    <div class="media-body">
-                                        <p class="mb-1">Deposit</p>
-                                        <h4 class="mb-0">₦{{number_format(intval($tdepo *1),2)}}</h4>
-                                        <span class="badge badge-warning">Total</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 {{--                    <div class="ml-md-auto py-2 py-md-0">--}}
 {{--                        <button type="button" class="btn btn-warning btn-round mr-2" data-toggle="modal" data-target="#fundWalletModal">--}}
 {{--                            Fund Wallet--}}
@@ -67,6 +35,40 @@
 {{--                        <a href="/404/page-not-found-error/page/" class="btn btn-info btn-round text-white" style="visibility:hidden">.</a>--}}
 
 {{--                    </div>--}}
+                </div>
+
+                <div class="col-xl-6  col-lg-6 col-sm-6">
+                    <div class="widget-stat card">
+                        <div class="card-body p-4">
+                            <div class="media ai-icon">
+									<span class="me-3 bgl-primary text-primary">
+										<!-- <i class="ti-user"></i> -->
+										<i class="fa fa-money"></i>
+									</span>
+                                <div class="media-body">
+                                    <p class="mb-1">Wallet</p>
+                                    <h4 class="mb-0">₦{{number_format(intval($wallet['balance'] *1),2)}}</h4>
+                                    <span class="badge badge-primary">Balance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6  col-lg-6 col-sm-6">
+                    <div class="widget-stat card">
+                        <div class="card-body p-4">
+                            <div class="media ai-icon">
+									<span class="me-3 bgl-warning text-warning">
+                                        <i class="fa fa-money"></i>
+									</span>
+                                <div class="media-body">
+                                    <p class="mb-1">Deposit</p>
+                                    <h4 class="mb-0">₦{{number_format(intval($tdepo *1),2)}}</h4>
+                                    <span class="badge badge-warning">Total</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
