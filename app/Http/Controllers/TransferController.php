@@ -139,15 +139,15 @@ class TransferController
 
 
 
-            $payloadData = array(
-                "account_name"=>$request->name,
-                "account_number" => $request->number,
-                "amount" => $request->amount,
-                "bank_code" => $request->id,
-                "narration" => $request->narration,
-                "reference" => $request->refid,
-                "sender_name" => $request->name,
-            );
+//            $payloadData = array(
+//                "account_name"=>$request->name,
+//                "account_number" => $request->number,
+//                "amount" => $request->amount,
+//                "bank_code" => $request->id,
+//                "narration" => $request->narration,
+//                "reference" => $request->refid,
+//                "sender_name" => $request->name,
+//            );
 
 
             $url = 'https://pay.sammighty.com.ng/api/transfer';
