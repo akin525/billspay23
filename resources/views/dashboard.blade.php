@@ -146,11 +146,11 @@
             </a>
         </div>
         <div class="col-4 col-sm-3 col-lg-3">
-            <a href="#">
+            <a href="{{route('transfer')}}">
                 <div class="card">
                     <div class="card-body p-3 text-center">
                              <span style="font-size: 30px;">
-                                 <img width="50" src="https://www.pngkit.com/png/detail/174-1749798_money-transfer-icon-png.png">
+                                 <img width="50" src="https://cdn.pixabay.com/photo/2018/08/25/21/08/money-3630935_1280.png">
                              </span>
                         <small>Transfer</small>
                         {{--                            <div class="h6 m-2 text-dark">Electricity</div>--}}
