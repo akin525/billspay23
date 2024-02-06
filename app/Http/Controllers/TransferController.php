@@ -16,38 +16,44 @@ class TransferController
     {
 
         $user=User::where('username', Auth::user()->username)->first();
-        if ($user->bvn == null){
-            $msg="Kindly Update your BVN on your profile";
-            return redirect('account')->with('error', $msg);
-        }
-
-        if ($user->withdraw == "0"){
-            $msg="Transfer option not enable kindly contact the admin";
-            return redirect('account')->with('error', $msg);
-        }else {
-            $url = 'https://api.paylony.com/api/v1/bank_list';
-
-            $headers = array(
-                'Content-Type: application/json',
-                'Authorization: Bearer ' . env('PAYLONY')
-            );
+//        if ($user->bvn == null){
+//            $msg="Kindly Update your BVN on your profile";
+//            return redirect('account')->with('error', $msg);
+//        }
+//
+//        if ($user->withdraw == "0"){
+//            $msg="Transfer option not enable kindly contact the admin";
+//            return redirect('account')->with('error', $msg);
+//        }else {
 
 
-            $options = array(
-                'http' => array(
-                    'header' => implode("\r\n", $headers),
-                    'method' => 'GET',
-                ),
-            );
+        $curl = curl_init();
 
-            $context = stream_context_create($options);
-            $response = file_get_contents($url, false, $context);
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.paylony.com/api/v1/bank_list',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Bearer '. env('PAYLONY')
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+//        echo $response;
+
 
             $data = json_decode($response, true);
 
             $bank = $data["data"]["banks"];
             return view('transfer', compact('bank'));
-        }
+//        }
     }
 
     function verifyaccount($valuea, $valueb)
